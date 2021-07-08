@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">EcoTour</string>
 
-    <string name="Ir_a_Maps">Maps</string>
+    <string name="Ir_a_MainPage">Página Principal</string>
     <string name="title_activity_maps">Map</string>
     <string name="descripción">description</string>
     <string name="title_activity_main_page">ScrollingActivity</string>

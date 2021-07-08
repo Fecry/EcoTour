@@ -219,9 +219,8 @@
             android:layout_width="wrap_content"
             android:layout_height="58dp"
             android:layout_weight="1"
-            android:background="#00FFFFFF"
+            android:background="#6A86A846"
             android:contentDescription="@string/descripción"
-            android:tint="#6A86A846"
             app:srcCompat="@drawable/cartera" />
 
         <ImageButton
@@ -229,7 +228,7 @@
             android:layout_width="wrap_content"
             android:layout_height="58dp"
             android:layout_weight="1"
-            android:background="#00FFFFFF"
+            android:background="#6A86A846"
             android:contentDescription="@string/descripción"
             app:srcCompat="@drawable/avion" />
     </LinearLayout>

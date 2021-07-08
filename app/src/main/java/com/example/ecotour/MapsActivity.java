@@ -3,7 +3,6 @@ package com.example.ecotour;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.FragmentActivity;
@@ -104,7 +103,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public boolean onMarkerClick(Marker marker) {
 
-        Toast.makeText(this,"Tero Covid" + marker.getPosition().latitude, Toast.LENGTH_LONG).show();
+
 
         //mMap.animateCamera(CameraUpdateFactory.zoomIn());
         //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 10));

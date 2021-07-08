@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="irPaginaPrincipal"
-            android:text="@string/Ir_a_Maps"
+            android:text="@string/Ir_a_MainPage"
             android:visibility="visible" />
     </LinearLayout>
 
