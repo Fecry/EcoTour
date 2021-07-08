@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">EcoTour</string>
+
+    <string name="Ir_a_Maps">Maps</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="descripción">description</string>
+    <string name="title_activity_main_page">ScrollingActivity</string>
+    <string name="iniciar_boton">Iniciar Sesión</string>
+    <string name="registrarse_boton">Registrarse</string>
+    <string name="texto_mapas">Mapa Interactivo de Parques Naturales</string>
+    <string name="texto_logo">¡La Naturaleza a un paso de ti!</string>
+    <string name="texto_favoritos">Tus Lugares Favoritos</string>
+    <string name="texto_destinos">Descubre destinos cerca a ti</string>
+    <string name="texto_reservas">Listado reservas</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
