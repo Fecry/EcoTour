@@ -5,8 +5,15 @@ import android.content.Context;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class ReadJson {
+
+    public static List<List<HashMap<String, String>>> routes = new ArrayList<List<HashMap<String,String>>>();
+    //public static Punto coordenadas = new Punto();
+
     public static String readJson(Context context, String fileName) throws IOException
     {
         BufferedReader reader = null;

@@ -12,20 +12,12 @@
     tools:context=".MapsActivity"
     tools:visibility="visible">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/backActionButton"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/button_mapsindicator"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_weight="0.5"
-        android:clickable="true"
-        android:src="?attr/actionModeCloseDrawable"
-        android:tint="#00FFFFFF"
-        android:visibility="visible"
-        map:backgroundTint="#00000000"
-        map:useCompatPadding="false"
-        tools:context=".MapsActivity"
-        tools:visibility="visible" />
+        android:onClick="mapsIndicator"
+        android:text="@string/indicadorMaps_boton" />
 
     <fragment
         android:id="@+id/map"
