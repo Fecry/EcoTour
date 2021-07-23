@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.ecotour.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/favoritosFragment"
+        android:name="com.example.ecotour.FavoritosFragment"
+        android:label="fragment_favoritos"
+        tools:layout="@layout/fragment_favoritos" />
+    <fragment
+        android:id="@+id/billeteraFragment"
+        android:name="com.example.ecotour.BilleteraFragment"
+        android:label="fragment_billetera"
+        tools:layout="@layout/fragment_billetera" />
+    <fragment
+        android:id="@+id/viajesFragment"
+        android:name="com.example.ecotour.viajesFragment"
+        android:label="fragment_viajes"
+        tools:layout="@layout/fragment_viajes" />
+</navigation>
