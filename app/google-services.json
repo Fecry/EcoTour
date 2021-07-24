@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "450661469305",
+    "firebase_url": "https://ecotour-e1524-default-rtdb.firebaseio.com",
+    "project_id": "ecotour-e1524",
+    "storage_bucket": "ecotour-e1524.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450661469305:android:a7db20be138891657658a8",
+        "android_client_info": {
+          "package_name": "com.example.ecotour"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450661469305-6g2sm31b0q61trdrt2mei5pc6ilp5g3m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD__q94kqEehH1kpIle3uxorNm9oM2K9FU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450661469305-6g2sm31b0q61trdrt2mei5pc6ilp5g3m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450661469305:android:e4823746dab223ec7658a8",
+        "android_client_info": {
+          "package_name": "com.example.proyecto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450661469305-6g2sm31b0q61trdrt2mei5pc6ilp5g3m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD__q94kqEehH1kpIle3uxorNm9oM2K9FU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450661469305-6g2sm31b0q61trdrt2mei5pc6ilp5g3m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
