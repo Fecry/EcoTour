@@ -104,8 +104,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 JSONObject jsonObj = jsonArray.getJSONObject(i);
                 String title = jsonObj.getString("name");
+                //String snipet = jsonObj.getString("snipet");
                 double latitude = jsonObj.getDouble("latitude");
                 double longitude = jsonObj.getDouble("longitude");
+
 
                 //Log.d("NOMBRE: ", title);
                 System.out.println(longitude);
@@ -386,6 +388,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 10));
 
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 9), 1000, null);
+        mMap.setInfoWindowAdapter(new CustomWindowInfo(getApplicationContext()));
 
         marker.showInfoWindow();
         //mMap.animateCamera(CameraUpdateFactory.zoomBy(10),3000, null);
@@ -397,12 +400,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         lastMarkerLatitude = marker.getPosition().latitude;
         lastMarkerLongitude = marker.getPosition().longitude;
 
+
+
+
         return true;
     }
+
+
+
 
     @Override
     public void onMapClick(LatLng latLng) {
         mMap.animateCamera(CameraUpdateFactory.zoomTo(5.5f), 1000, null);
     }
+
+
+
 
 }

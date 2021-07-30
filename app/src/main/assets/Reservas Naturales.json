@@ -12,7 +12,7 @@
     "longitude": -74.0658312039217, "latitude": 11.30663026305676
 },
 {
-	"name": "Parque Nacional Natural Farallones De Cal, Cali, Valle del Cauca", 
+	"name": "Parque Nacional Natural Farallones De Cal, Cali, Valle del Cauca",
     "longitude": -77.10496517220314, "latitude": 3.4156558064242053
 },
 {
@@ -65,7 +65,8 @@
 },
 {
     "name": "Parque nacional natural Sumapaz",
-    "longitude": -74.20919681422818, "latitude": 4.289158273895087
+    "longitude": -74.20919681422818, "latitude": 4.289158273895087,
+    "snipet": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA E"
 },
 {
     "name": "Parque nacional natural El Cocuy",
@@ -166,71 +167,71 @@
 {
     "name": "Parque nacional natural Catatumbo Barí",
     "longitude": -73.1639134885836, "latitude": 8.969531898325322
-},    
+},
 {
     "name": "Santuario de fauna y flora Guanentá Alto Río Fonce",
     "longitude": -73.13820040223011, "latitude": 6.047039245389172
-},    
+},
 {
     "name": "Parque nacional natural Old Providence McBean Lagoon",
     "longitude": -81.34943672443933, "latitude": 13.359870598850335
-},    
+},
 {
     "name": "Santuario de fauna y flora Malpelo",
     "longitude": -81.60571336319298, "latitude": 4.005939622831793
-},    
+},
 {
     "name": "Santuario de fauna y flora Otún Quimbaya",
     "longitude": -74.4985053254652, "latitude": 4.966848516699416
-},    
+},
 {
     "name": "Parque nacional natural Río Puré",
     "longitude": -69.98131815229605, "latitude": -1.8861652402475853
-},    
+},
 {
     "name": "Parque nacional natural Alto Fragua Indi-Wasi",
     "longitude": -75.90453765925177, "latitude": 1.36575108754867
-},    
+},
 {
     "name": "Santuario de fauna y flora El Corchal El mono Hernández",
     "longitude": -75.54100784625349, "latitude": 10.032808622414064
-},    
+},
 {
     "name": "Parque nacional natural Selva de Florencia",
     "longitude": -75.06939341742377, "latitude": 5.485525475748811
-},    
+},
 {
     "name": "Parque nacional natural Serranía de los Yariguíes",
     "longitude": -73.45689246345901, "latitude": 6.56266097088725
-},    
+},
 {
     "name": "Parque nacional natural Complejo Volcánico Doña Juana-Cascabel",
     "longitude": -76.76934557703198, "latitude": 1.5542940648095518
-},    
+},
 {
     "name": "Parque nacional natural Serranía de los Churumbelos Auka-Wasi",
     "longitude": -76.42386140792932, "latitude": 1.2973335561770039
-},    
+},
 {
     "name": "Santuario de fauna y flora Plantas Medicinales Orito Ingi-Andé",
     "longitude": -77.0963651192706, "latitude": 0.7623348504288691
-},    
+},
 {
     "name": "Parque nacional natural Yaigojé Apaporis",
     "longitude": -70.25971800206626, "latitude": -0.6559952401820808
-},        
+},
 {
     "name": "Parque nacional natural Uramba Bahía Málaga",
     "longitude": -77.24226209758596, "latitude": 4.0080623654413445
-},    
+},
 {
     "name": "Santuario de fauna y flora Acandí, Playón y Playona",
     "longitude": -77.2058106308942, "latitude": 8.450737633767385
-},    
+},
 {
     "name": "Parque nacional natural Corales de Profundidad",
     "longitude": -76.06267083749276, "latitude": 9.971287970669492
-},    
+},
 {
     "name": "Parque nacional natural Bahía Portete-Kaurrele​",
     "longitude": -71.88602706996933, "latitude": 12.202417941103047

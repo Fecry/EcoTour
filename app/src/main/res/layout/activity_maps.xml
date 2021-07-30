@@ -1,31 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
+    android:id="@+id/LL6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#211E3C06"
     android:visibility="visible"
     tools:context=".MapsActivity"
     tools:visibility="visible">
 
-    <Button
+    <!--Button
         android:id="@+id/button_mapsindicator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="mapsIndicator"
-        android:text="@string/indicadorMaps_boton" />
+        android:text="@string/indicadorMaps_boton" /-->
 
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+    <LinearLayout
+        android:id="@+id/LL7"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:layout_marginTop="0dp"
-        tools:context=".MapsActivity" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            tools:context=".MapsActivity" />
+
+        <Button
+            android:id="@+id/regreso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/indicadorMaps_boton"
+            android:textColor="#000" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/descripción"
+            map:srcCompat="@drawable/logo_ecotour2" />
+    </LinearLayout>
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,38 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9A86A846"
+    android:background="#211E3C06"
     tools:context=".DashboardFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="412dp"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dashboard"
-            android:textSize="30sp" />
-    </LinearLayout>
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="413dp"
-        android:layout_height="555dp"
+        android:layout_height="655dp"
+        android:layout_marginTop="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/LL2"
@@ -46,74 +28,115 @@
                 android:id="@+id/imageButton12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#211E3C06"
                 android:contentDescription="@string/descripción"
-                app:srcCompat="@drawable/colombia" />
+                app:srcCompat="@drawable/mapa_colombia2" />
 
-            <TextView
-                android:id="@+id/Texto_Mapas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/scada"
-                android:text="@string/texto_mapas"
-                android:textSize="24sp"
-                tools:text="@string/texto_mapas" />
 
-            <View
-                android:id="@+id/divider3"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="155dp"
-                android:contentDescription="@string/descripción"
-                app:srcCompat="@drawable/logo_ecotour" />
-
-            <TextView
-                android:id="@+id/texto_logo"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#86A846"
-                android:fontFamily="@font/scada"
-                android:text="@string/texto_logo"
-                android:textSize="24sp"
-                tools:text="@string/texto_logo" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Texto_Mapas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/scada"
+                    android:maxLines="1"
+                    android:text="@string/texto_mapas"
+                    android:textColor="#000"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    tools:text="@string/texto_mapas" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1AA9D795"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imageButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="137dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#1AA9D795"
+                    android:contentDescription="@string/descripción"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/logo_ecotour2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#86A846"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/texto_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/scada"
+                    android:text="@string/texto_logo"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    tools:text="@string/texto_logo" />
+            </LinearLayout>
 
             <View
                 android:id="@+id/divider2"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
-
-            <TextView
-                android:id="@+id/texto_favorito"
+                android:layout_height="5dp"
+                android:background="#1E3C06" />
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:fontFamily="@font/scada"
-                android:text="@string/texto_favoritos"
-                android:textSize="34sp"
-                tools:text="@string/texto_favoritos" />
+                android:background="#1AA9D795"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/texto_favorito"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/scada"
+                    android:text="@string/texto_favoritos"
+                    android:textSize="34sp"
+                    tools:text="@string/texto_favoritos" />
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/descripción"
-                app:srcCompat="@drawable/corazon" />
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:contentDescription="@string/descripción"
+                    app:srcCompat="@drawable/corazon" />
+            </LinearLayout>
 
             <View
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="5dp"
+                android:background="#1E3C06" />
 
             <TextView
                 android:id="@+id/texto_destinos"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center_horizontal"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/scada"
                 android:text="@string/texto_destinos"
@@ -138,24 +161,51 @@
                         app:srcCompat="@drawable/descarga" />
 
                     <ImageButton
-                        android:id="@+id/imageButton9"
+                        android:id="@+id/imageButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:contentDescription="@string/descripción"
-                        app:srcCompat="@drawable/signo" />
+                        android:src="@drawable/parque_2" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/descripción"
+                        android:src="@drawable/parque_3" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/descripción"
+                        android:src="@drawable/parque_1" />
+
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <View
+                android:id="@+id/divider65"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="#1E3C06" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/texto_reservas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
                     android:background="@android:color/transparent"
                     android:fontFamily="@font/scada"
                     android:text="@string/texto_reservas"
@@ -164,10 +214,11 @@
 
                 <ImageView
                     android:id="@+id/imageView3"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:contentDescription="@string/descripción"
-                    app:srcCompat="@drawable/portapapeles" />
+                    app:srcCompat="@drawable/portapapeles2" />
             </LinearLayout>
 
         </LinearLayout>
