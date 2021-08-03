@@ -5,7 +5,7 @@
         android:id="@+id/dashboardFragment"
         android:background="#6B86A846"
         android:icon="@drawable/ic_dashboard"
-        android:title="Dashboard" />
+        android:title="Principal" />
     <item
         android:id="@+id/favoritosFragment"
         android:title="Favoritos"

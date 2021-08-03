@@ -12,11 +12,46 @@
     <string name="texto_favoritos">Tus Lugares Favoritos</string>
     <string name="texto_destinos">Descubre destinos cerca a ti</string>
     <string name="texto_reservas">Listado reservas</string>
-
+    <string name="texto_favoritos_Fragment">Tus favoritos</string>
+    <string name="texto_viajes_Fragment">Tus viajes programados</string>
+    <string name="Continuar">Sigue explorando...</string>
+    <string name="Billetera">Calculadora de presupuesto</string>
     <string name="texto_regresar">Regresar</string>
-
 
     <string name="indicadorMaps_boton">Indicación</string>
 
     <string name="action_settings">Settings</string>
+
+    //Billetera
+
+    <string-array name="noches">
+        <item>Precio</item>
+        <item>$10.000 - $50.000</item>
+        <item>$10.000 - $100.000</item>
+        <item>$100.000 -</item>
+    </string-array>
+
+    <string-array name="habitaciones">
+        <item>Cantidad</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4 o más</item>
+    </string-array>
+
+    <string-array name="personas">
+        <item>Cantidad</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4 o más</item>
+
+    </string-array>
+
+    <string name="Precio_noche">Precio por noche</string>
+    <string name="Habitaciones">Cantidad de habitaciones</string>
+    <string name="Personas">Cantidad de personas</string>
+    <string name = "boton_billetera"> Guardar preferencias</string>
+
+
 </resources>
