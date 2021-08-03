@@ -1,10 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#211E3C06"
     tools:context=".programarViaje">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <ScrollView
+      android:layout_width="417dp"
+      android:layout_height="733dp"
+      android:layout_marginStart="1dp"
+      android:layout_marginLeft="1dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="1dp"
+      android:layout_marginRight="1dp"
+      android:layout_marginBottom="2dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="1.0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#211E3C06"
+        android:orientation="vertical">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="#86A846"
+          android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="#86A846"
+            android:fontFamily="@font/scada"
+            android:lineSpacingExtra="10sp"
+            android:text="@string/Programar_Viaje"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#0C0C0C"
+            android:textSize="28sp" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="#1E3C06" />
+
+      </LinearLayout>
+
+      <View
+          android:id="@+id/divider9"
+          android:layout_width="match_parent"
+          android:layout_height="32dp"
+          android:background="#001E3C06" />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="59dp"
+          android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="365dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#4D86A846"
+            android:fontFamily="@font/scada"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineSpacingExtra="12sp"
+            android:text="@string/Año"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner_año"
+            android:layout_width="373dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+      </LinearLayout>
+
+      <View
+          android:id="@+id/divider10"
+          android:layout_width="match_parent"
+          android:layout_height="32dp"
+          android:layout_weight="1"
+          android:background="#001E3C06" />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="59dp"
+          android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="393dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#4D86A846"
+            android:fontFamily="@font/scada"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineSpacingExtra="12sp"
+            android:text="@string/Mes"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner_mes"
+            android:layout_width="409dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+      </LinearLayout>
+
+      <View
+          android:id="@+id/divider11"
+          android:layout_width="match_parent"
+          android:layout_height="32dp"
+          android:layout_weight="1"
+          android:background="#001E3C06" />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="59dp"
+          android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="63dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#4D86A846"
+            android:fontFamily="@font/scada"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineSpacingExtra="12sp"
+            android:text="@string/Dia_inicio"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner_dia1"
+            android:layout_width="68dp"
+            android:layout_height="67dp"
+            android:layout_weight="1" />
+      </LinearLayout>
+
+      <View
+          android:id="@+id/divider12"
+          android:layout_width="match_parent"
+          android:layout_height="32dp"
+          android:layout_weight="1"
+          android:background="#001E3C06" />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="59dp"
+          android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="153dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#4D86A846"
+            android:fontFamily="@font/scada"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineSpacingExtra="12sp"
+            android:text="@string/Dia_final"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner_dia2"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+      </LinearLayout>
+
+      <View
+          android:id="@+id/divider13"
+          android:layout_width="match_parent"
+          android:layout_height="32dp"
+          android:layout_weight="1"
+          android:background="#001E3C06" />
+
+      <Switch
+          android:id="@+id/switch2"
+          android:layout_width="match_parent"
+          android:layout_height="59dp"
+          android:background="#4D86A846"
+          android:fontFamily="@font/scada"
+          android:gravity="center|right|left|center_vertical"
+          android:lineSpacingExtra="12sp"
+          android:text="@string/Notificacion"
+          android:textSize="20sp" />
+
+      <View
+          android:id="@+id/divider14"
+          android:layout_width="match_parent"
+          android:layout_height="32dp"
+          android:layout_weight="1"
+          android:background="#001E3C06" />
+
+      <Button
+          android:id="@+id/programar_btn"
+          android:layout_width="match_parent"
+          android:layout_height="63dp"
+          android:text="@string/boton_billetera"
+          android:textSize="14sp" />
+
+    </LinearLayout>
+  </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
