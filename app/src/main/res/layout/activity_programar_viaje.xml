@@ -191,7 +191,7 @@
           android:background="#001E3C06" />
 
       <Switch
-          android:id="@+id/switch2"
+          android:id="@+id/switch_notificacion"
           android:layout_width="match_parent"
           android:layout_height="59dp"
           android:background="#4D86A846"
@@ -199,7 +199,8 @@
           android:gravity="center|right|left|center_vertical"
           android:lineSpacingExtra="12sp"
           android:text="@string/Notificacion"
-          android:textSize="20sp" />
+          android:textSize="20sp"
+          tools:ignore="UseSwitchCompatOrMaterialXml" />
 
       <View
           android:id="@+id/divider14"

@@ -7,12 +7,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class programarViaje extends AppCompatActivity implements View.OnClickListener {
-    String[] opcionesArray = {"Año", "", "Mes","", "Dia inicio", "", "Dia final", ""};
-    String opciones = "";
-    String opciones_prueba = "";
+    ArrayList<String> opcionesArray = new ArrayList<String>();
+    Switch notificacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,11 @@ public class programarViaje extends AppCompatActivity implements View.OnClickLis
         //Boton
         Button guardar = findViewById(R.id.programar_btn);
         guardar.setOnClickListener(this);
+
+        //Switch
+
+        notificacion = (Switch) findViewById(R.id.switch_notificacion);
+        notificacion.setOnClickListener(this);
 
         //Spinner, seleccionar opciones
 
@@ -46,7 +53,7 @@ public class programarViaje extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String año = parent.getItemAtPosition(position).toString();
-                opcionesArray[1] = año;
+                opcionesArray.add(año);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -58,7 +65,7 @@ public class programarViaje extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String mes = parent.getItemAtPosition(position).toString();
-                opcionesArray[3] = mes;
+                opcionesArray.add(mes);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -69,7 +76,7 @@ public class programarViaje extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String dia1 = parent.getItemAtPosition(position).toString();
-                opcionesArray[5] = dia1;
+                opcionesArray.add(dia1);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -80,28 +87,28 @@ public class programarViaje extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String dia2 = parent.getItemAtPosition(position).toString();
-                opcionesArray[7] = dia2;
+                opcionesArray.add(dia2);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
-        //probar si está funcionando el Array porque supongo que la función se puede desarrollar más fácil con un Array.
-        for(int i=0; i<7; i++){
-            opciones= opciones+opcionesArray[i];
-            if(i%2==0){
-                opciones = opciones + ": ";
-            }
-        }
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.switch_notificacion:
+                if(notificacion.isChecked()){
+                    opcionesArray.add("Activado");
+                }
+                else{
+                    opcionesArray.add("Desactivado");
+                }
+
             case R.id.programar_btn:
                 Toast.makeText(programarViaje.this, "Viaje programado. ", Toast.LENGTH_LONG).show();
-                Toast.makeText(programarViaje.this, opciones, Toast.LENGTH_LONG).show();
+                Toast.makeText(programarViaje.this, opcionesArray.toString(), Toast.LENGTH_LONG).show();
                 break;
         }
     }

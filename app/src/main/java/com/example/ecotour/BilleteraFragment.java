@@ -13,8 +13,10 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import java.util.ArrayList;
+
 public class BilleteraFragment extends Fragment implements View.OnClickListener {
-    String[] opcionesArray = {"Noches", "", "Habitaciones", "", "Personas", ""};
+    ArrayList<String> opcionesArray = new ArrayList<String>();
     String opciones= "";
     public BilleteraFragment() {
         // Required empty public constructor
@@ -59,7 +61,7 @@ public class BilleteraFragment extends Fragment implements View.OnClickListener 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String noches = parent.getItemAtPosition(position).toString();
-                opcionesArray[1]= noches;
+                opcionesArray.add(noches);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -70,7 +72,7 @@ public class BilleteraFragment extends Fragment implements View.OnClickListener 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String habitaciones = parent.getItemAtPosition(position).toString();
-                opcionesArray[3]=habitaciones;
+                opcionesArray.add(habitaciones);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -81,18 +83,12 @@ public class BilleteraFragment extends Fragment implements View.OnClickListener 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String personas = parent.getItemAtPosition(position).toString();
-                opcionesArray[5]= personas;
+                opcionesArray.add(personas);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-        for(int i=0; i<5; i++){
-            opciones= opciones+opcionesArray[i];
-            if(i%2==0){
-                opciones = opciones + ": ";
-            }
-        }
 
         return vista;
     }
@@ -101,8 +97,7 @@ public class BilleteraFragment extends Fragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.billera_btn:
-                Toast.makeText(getContext(), "Procesando... ", Toast.LENGTH_LONG).show();
-                Toast.makeText(getContext(), opciones, Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), opcionesArray.toString(), Toast.LENGTH_LONG).show();
                 startActivity(new Intent(getContext(), programarViaje.class));
                 break;
         }
