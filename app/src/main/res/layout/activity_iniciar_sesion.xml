@@ -62,52 +62,36 @@
         tools:visibility="invisible" />
 
     <Button
-        android:id="@+id/registrarse_btn1"
-        android:layout_width="161dp"
-        android:layout_height="43dp"
-        android:layout_weight="1"
-        android:text="Registrarse"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.762" />
-
-    <Button
         android:id="@+id/continuar_btn"
-        android:layout_width="161dp"
+        android:layout_width="136dp"
         android:layout_height="43dp"
         android:layout_weight="1"
-        android:text="Continuar"
+        android:text="@string/continua"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.825" />
+        app:layout_constraintVertical_bias="0.85" />
 
     <Button
         android:id="@+id/iniciar_btn2"
         android:layout_width="192dp"
         android:layout_height="43dp"
-        android:text="Iniciar Sesion"
+        android:text="@string/iniciar"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7" />
+        app:layout_constraintVertical_bias="0.787" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="83dp"
         android:layout_height="28dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Correo"
+        android:text="@string/email"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -122,7 +106,7 @@
         android:layout_width="101dp"
         android:layout_height="22dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Contraseña"
+        android:text="@string/password"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -134,14 +118,49 @@
 
     <ImageButton
         android:id="@+id/google_btn"
-        android:layout_width="45dp"
-        android:layout_height="53dp"
+        android:layout_width="46dp"
+        android:layout_height="57dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.308"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.615"
         app:srcCompat="@drawable/googleg_standard_color_18" />
+
+    <TextView
+        android:id="@+id/contraseña_btn"
+        android:layout_width="130dp"
+        android:layout_height="31dp"
+        android:background="#3628E1AD"
+        android:fontFamily="@font/scada"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="10sp"
+        android:text="@string/olvide_contra"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.772"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.705" />
+
+    <TextView
+        android:id="@+id/registrarse_btn1"
+        android:layout_width="130dp"
+        android:layout_height="31dp"
+        android:background="#3628E1AD"
+        android:fontFamily="@font/scada"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="12sp"
+        android:text="@string/registrarse_boton"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.705" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

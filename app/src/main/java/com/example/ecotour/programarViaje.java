@@ -102,14 +102,12 @@ public class programarViaje extends AppCompatActivity implements View.OnClickLis
                 if(notificacion.isChecked()){
                     opcionesArray.add("Activado");
                 }
-                else{
-                    opcionesArray.add("Desactivado");
-                }
-
+                break;
             case R.id.programar_btn:
                 Toast.makeText(programarViaje.this, "Viaje programado. ", Toast.LENGTH_LONG).show();
                 Toast.makeText(programarViaje.this, opcionesArray.toString(), Toast.LENGTH_LONG).show();
                 break;
+
         }
     }
 }

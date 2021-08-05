@@ -1,6 +1,5 @@
 package com.example.ecotour;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,15 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class iniciarSesion extends AppCompatActivity implements View.OnClickListener{
-    private Button registra;
+    private TextView registra;
+    private TextView contra_olvidada;
     private Button inicio;
     private Button continuar;
 
@@ -38,8 +36,11 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
         Button inicio = findViewById(R.id.iniciar_btn2);
         inicio.setOnClickListener(this);
 
-        Button registra = findViewById(R.id.registrarse_btn1);
+        TextView registra = findViewById(R.id.registrarse_btn1);
         registra.setOnClickListener(this);
+
+        TextView contra_olvidada = findViewById(R.id.contraseña_btn);
+        contra_olvidada.setOnClickListener(this);
 
         Button continuar = findViewById(R.id.continuar_btn);
         continuar.setOnClickListener(this);
@@ -64,7 +65,9 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
             case R.id.continuar_btn:
                 startActivity(new Intent(this, navegacion.class));
                 break;
-
+            case R.id.contraseña_btn:
+                startActivity(new Intent(this, contra_olvidada.class));
+                break;
         }
     }
     public void iniciar(){

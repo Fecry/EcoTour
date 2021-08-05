@@ -105,7 +105,7 @@ public class Registrarse extends AppCompatActivity implements View.OnClickListen
             return;
         }
 
-        progressBar.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.INVISIBLE);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -123,7 +123,7 @@ public class Registrarse extends AppCompatActivity implements View.OnClickListen
 
                                     if (task.isSuccessful()) {
                                         Toast.makeText(Registrarse.this, "El usuario ha sido registrado exitosamente.", Toast.LENGTH_LONG).show();
-                                        progressBar.setVisibility(View.GONE);
+                                        progressBar.setVisibility(View.VISIBLE);
 
                                     } else {
                                         Toast.makeText(Registrarse.this, "No se ha podido registrar, intente de nuevo.", Toast.LENGTH_LONG).show();
