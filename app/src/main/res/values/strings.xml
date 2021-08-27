@@ -39,9 +39,6 @@
     <string name="olvide_contra">Olvidé contraseña</string>
 
 
-
-
-
     //Billetera
 
     <string-array name="noches">
@@ -142,5 +139,10 @@
         <item>30</item>
         <item>31</item>
     </string-array>
+
+    //Listado reservas
+    <string name="ListaReservasTitulo">Áreas Protegidas</string>
+    <string name="textview">TextView</string>
+    <string name="todo">TODO</string>
 
 </resources>

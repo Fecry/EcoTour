@@ -15,8 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EcoTour">
-        <activity android:name=".contra_olvidada"></activity>
-        <activity android:name=".programarViaje"></activity>
+        <activity
+            android:name=".ListadoReservasActivity"
+            android:exported="true" />
+        <activity android:name=".contra_olvidada" />
+        <activity android:name=".programarViaje" />
         <activity android:name=".iniciarSesion" />
         <activity android:name=".Registrarse" />
         <activity android:name=".navegacion" />

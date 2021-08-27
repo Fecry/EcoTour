@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 
@@ -32,6 +33,9 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
         ImageButton mapa = (ImageButton) vista.findViewById(R.id.imageButton12);
         mapa.setOnClickListener(this);
 
+        LinearLayout listadoReservasLink = (LinearLayout) vista.findViewById(R.id.ListadoReservasLink);
+        listadoReservasLink.setOnClickListener(this);
+
         return vista;
     }
 
@@ -41,6 +45,10 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.imageButton12:
                 startActivity(new Intent(getContext(), MapsActivity.class));
+                break;
+
+            case R.id.ListadoReservasLink:
+                startActivity(new Intent(getContext(), ListadoReservasActivity.class));
                 break;
         }
     }
