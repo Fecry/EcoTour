@@ -1,6 +1,5 @@
-package com.example.ecotour.entities;
+package com.example.ecotour.entidades;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Reserva
@@ -8,10 +7,10 @@ public class Reserva
     private int laImagen;
     private String nombre;
     private String calificacion;
-    private String cantidadCalificaciones;
+    private int cantidadCalificaciones;
     private String ubicacionGeografica;
-    private String descripción;
-    private ArrayList<String> ubicacionesCercanas;
+    private String descripcion;
+    private String ubicacionesCercanas;
     private String floraYFauna;
     private String recomendaciones;
     private ArrayList<Ruta> rutas;
@@ -40,11 +39,11 @@ public class Reserva
         this.calificacion = calificacion;
     }
 
-    public String getCantidadCalificaciones() {
+    public int getCantidadCalificaciones() {
         return cantidadCalificaciones;
     }
 
-    public void setCantidadCalificaciones(String cantidadCalificaciones) {
+    public void setCantidadCalificaciones(int cantidadCalificaciones) {
         this.cantidadCalificaciones = cantidadCalificaciones;
     }
 
@@ -56,19 +55,19 @@ public class Reserva
         this.ubicacionGeografica = ubicacionGeografica;
     }
 
-    public String getDescripción() {
-        return descripción;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescripción(String descripción) {
-        this.descripción = descripción;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public ArrayList<String> getUbicacionesCercanas() {
+    public String getUbicacionesCercanas() {
         return ubicacionesCercanas;
     }
 
-    public void setUbicacionesCercanas(ArrayList<String> ubicacionesCercanas) {
+    public void setUbicacionesCercanas(String ubicacionesCercanas) {
         this.ubicacionesCercanas = ubicacionesCercanas;
     }
 

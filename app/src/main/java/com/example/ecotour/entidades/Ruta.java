@@ -1,4 +1,4 @@
-package com.example.ecotour.entities;
+package com.example.ecotour.entidades;
 
 public class Ruta
 {

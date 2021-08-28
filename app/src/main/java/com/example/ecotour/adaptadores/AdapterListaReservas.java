@@ -1,4 +1,4 @@
-package com.example.ecotour.adapters;
+package com.example.ecotour.adaptadores;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 
 import com.example.ecotour.R;
-import com.example.ecotour.entities.Reserva;
+import com.example.ecotour.entidades.Reserva;
 
 import java.util.List;
 
@@ -66,7 +66,7 @@ public class AdapterListaReservas extends BaseAdapter
         LinearLayout imagen = (LinearLayout) v.findViewById(R.id.imagenReserva);
         imagen.setBackground(v.getContext().getDrawable(cadaReserva.getLaImagen()));
         TextView textoImagen = (TextView) v.findViewById(R.id.textoSobreImagen);
-        textoImagen.setText(cadaReserva.getNombre());
+        textoImagen.setText(cadaReserva.getNombre() + " - " + cadaReserva.getUbicacionGeografica());
 
         return v;
     }
