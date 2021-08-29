@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListadoReservasActivity">
+    tools:context=".InfoAdicionalReserva">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,22 +18,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:background="#86A846"
                 android:fontFamily="@font/scada"
-                android:text="@string/ListaReservasTitulo"
                 android:textColor="#0C0C0C"
                 android:textSize="28sp" />
-
         </LinearLayout>
-
-        <ListView
-            android:id="@+id/listaReservas"
-            android:layout_width="match_parent"
-            android:layout_height="659dp" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

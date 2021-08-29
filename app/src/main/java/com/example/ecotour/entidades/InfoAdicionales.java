@@ -1,6 +1,8 @@
 package com.example.ecotour.entidades;
 
-public class Ruta
+import java.io.Serializable;
+
+public class InfoAdicionales implements Serializable
 {
     private String nombreRuta;
     private String descripcion;

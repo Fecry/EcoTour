@@ -16,6 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EcoTour">
         <activity
+            android:name=".InfoAdicionalReserva"
+            android:exported="true" />
+        <activity
+            android:name=".InformaciónDeslizableActivity"
+            android:exported="true"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/Theme.EcoTour.NoActionBar" />
+        <activity
             android:name=".ListadoReservasActivity"
             android:exported="true" />
         <activity android:name=".contra_olvidada" />

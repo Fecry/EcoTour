@@ -1,8 +1,9 @@
 package com.example.ecotour.entidades;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Reserva
+public class Reserva implements Serializable
 {
     private int laImagen;
     private String nombre;
@@ -13,7 +14,12 @@ public class Reserva
     private String ubicacionesCercanas;
     private String floraYFauna;
     private String recomendaciones;
-    private ArrayList<Ruta> rutas;
+    private ArrayList<InfoAdicionales> infoAdicionales;
+
+    public Reserva()
+    {
+        infoAdicionales = new ArrayList<InfoAdicionales>();
+    }
 
     public int getLaImagen() {
         return laImagen;
@@ -87,11 +93,11 @@ public class Reserva
         this.recomendaciones = recomendaciones;
     }
 
-    public ArrayList<Ruta> getRutas() {
-        return rutas;
+    public ArrayList<InfoAdicionales> getRutas() {
+        return infoAdicionales;
     }
 
-    public void setRutas(ArrayList<Ruta> rutas) {
-        this.rutas = rutas;
+    public void setRutas(ArrayList<InfoAdicionales> infoAdicionales) {
+        this.infoAdicionales = infoAdicionales;
     }
 }
