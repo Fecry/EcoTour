@@ -89,8 +89,9 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
         favoritos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                numeroReservas.add(1);
+                String nombre = reserva.getNombre();
+                int numero = ListadoReservasActivity.diccionario.get(nombre);
+                numeroReservas.add(numero);
                 Toast.makeText(getBaseContext(), "Agregada a favoritos.", Toast.LENGTH_LONG).show();
             }
         });
@@ -98,9 +99,11 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
         viajes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String nombre = reserva.getNombre();
+                int numero = ListadoReservasActivity.diccionario.get(nombre);
+                numeroReservas.add(numero);
                 Intent intent = new Intent(getBaseContext(), programarViaje.class);
-                intent.putExtra("numeroViaje", (Serializable) 2);
+                intent.putExtra("numeroViaje", (Serializable) numero);
                 startActivity(intent);
 
             }

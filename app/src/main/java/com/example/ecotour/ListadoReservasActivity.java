@@ -17,6 +17,8 @@ import java.util.List;
 
 public class ListadoReservasActivity extends AppCompatActivity
 {
+    static HashMap<String,Integer> diccionario= new HashMap<String, Integer>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +26,6 @@ public class ListadoReservasActivity extends AppCompatActivity
 
         ListView laListaGraf = (ListView) findViewById(R.id.listaReservas);
         List<Reserva> lasReservas = new ArrayList<Reserva>();
-        HashMap<String,Integer> diccionario= new HashMap<String, Integer>();
 
         for (int i = 0; i < 20; i++)
         {
