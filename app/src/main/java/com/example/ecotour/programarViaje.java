@@ -111,11 +111,16 @@ public class programarViaje extends AppCompatActivity implements View.OnClickLis
                 }
                 break;
             case R.id.programar_btn:
-                numeroReservaProgramada.add((int) getIntent().getSerializableExtra("numeroViaje"));
-                Toast.makeText(programarViaje.this, "Viaje programado. ", Toast.LENGTH_LONG).show();
-                Toast.makeText(programarViaje.this, opcionesArray.toString(), Toast.LENGTH_LONG).show();
-                break;
+                int numero = (int) getIntent().getSerializableExtra("numeroViaje");
+                if(numeroReservaProgramada.contains(numero)){
+                    Toast.makeText(programarViaje.this, "Ya se ha programado un viaje con esta reserva. ", Toast.LENGTH_LONG).show();
+                }else{
+                    numeroReservaProgramada.add(numero);
+                    Toast.makeText(programarViaje.this, "Viaje programado. ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(programarViaje.this, opcionesArray.toString(), Toast.LENGTH_LONG).show();
 
+                }
+                break;
         }
     }
 }

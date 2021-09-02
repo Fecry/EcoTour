@@ -91,8 +91,14 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String nombre = reserva.getNombre();
                 int numero = ListadoReservasActivity.diccionario.get(nombre);
-                numeroReservas.add(numero);
-                Toast.makeText(getBaseContext(), "Agregada a favoritos.", Toast.LENGTH_LONG).show();
+                if(numeroReservas.contains(numero)){
+                    Toast.makeText(getBaseContext(), "Esta reserva ya ha sido agregada a favoritos.", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    numeroReservas.add(numero);
+                    Toast.makeText(getBaseContext(), "Agregada a favoritos.", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
         ImageButton viajes = findViewById(R.id.viajes_seleccionar);
@@ -101,12 +107,11 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String nombre = reserva.getNombre();
                 int numero = ListadoReservasActivity.diccionario.get(nombre);
-                numeroReservas.add(numero);
                 Intent intent = new Intent(getBaseContext(), programarViaje.class);
                 intent.putExtra("numeroViaje", (Serializable) numero);
                 startActivity(intent);
-
             }
         });
+
     }
 }
