@@ -8,8 +8,8 @@
     tools:context=".programarViaje">
 
   <ScrollView
-      android:layout_width="417dp"
-      android:layout_height="733dp"
+      android:layout_width="414dp"
+      android:layout_height="715dp"
       android:layout_marginStart="1dp"
       android:layout_marginLeft="1dp"
       android:layout_marginTop="16dp"
@@ -199,8 +199,7 @@
           android:gravity="center|right|left|center_vertical"
           android:lineSpacingExtra="12sp"
           android:text="@string/Notificacion"
-          android:textSize="20sp"
-          tools:ignore="UseSwitchCompatOrMaterialXml" />
+          android:textSize="20sp" />
 
       <View
           android:id="@+id/divider14"
