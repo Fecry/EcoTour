@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
@@ -34,12 +36,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.io.Serializable;
+import java.util.zip.Inflater;
+
 public class iniciarSesion extends AppCompatActivity implements View.OnClickListener {
     private TextView registra;
     private TextView contra_olvidada;
     private Button inicio;
     private Button continuar;
     private ImageButton google;
+    static String cambio;
 
     private EditText textCorreo, textContra;
     private FirebaseAuth mAuth;
@@ -47,7 +53,8 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
     private ProgressBar progressBar;
     private GoogleSignInClient mGoogleSignInClient;
 
-    @Override
+    @SuppressLint("ResourceType")
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
@@ -104,7 +111,7 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
-
+    //INGRESO CON GOOGLE
     private void crearSolicitudGoogle() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).
                 requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
@@ -143,6 +150,10 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
                         FirebaseUser user = mAuth.getCurrentUser();
                         startActivity(new Intent(iniciarSesion.this, navegacion.class));
                         Toast.makeText(iniciarSesion.this, "Ingreso exitoso.", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(iniciarSesion.this, navegacion.class);
+                        intent.putExtra("email", (Serializable) user);
+                        startActivity(intent);
+
                     } else {
                         // If sign in fails, display a message to the user.
                         Toast.makeText(iniciarSesion.this, "Lo sentimos, error en la autenticación.", Toast.LENGTH_LONG).show();
@@ -182,8 +193,12 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if(task.isSuccessful()){
-                startActivity(new Intent(iniciarSesion.this, navegacion.class));
+                Intent intent = new Intent(iniciarSesion.this, navegacion.class);
+                Toast.makeText(iniciarSesion.this, "Ingreso exitoso.", Toast.LENGTH_LONG).show();
 
+                int arroba = email.indexOf("@");
+                intent.putExtra("email", (Serializable) email.substring(0,arroba));
+                startActivity(intent);
             }
             else{
                 Toast.makeText(iniciarSesion.this,"Datos incorrectos, inténtalo de nuevo", Toast.LENGTH_LONG).show();

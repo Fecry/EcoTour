@@ -89,6 +89,7 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
         favoritos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                favoritos.setBackgroundColor(getResources().getColor(R.color.purple_200));
                 String nombre = reserva.getNombre();
                 int numero = ListadoReservasActivity.diccionario.get(nombre);
                 if(numeroReservas.contains(numero)){
