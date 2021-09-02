@@ -12,6 +12,7 @@ import com.example.ecotour.entidades.Reserva;
 import com.example.ecotour.utilidades.Utilidades;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class ListadoReservasActivity extends AppCompatActivity
@@ -23,6 +24,7 @@ public class ListadoReservasActivity extends AppCompatActivity
 
         ListView laListaGraf = (ListView) findViewById(R.id.listaReservas);
         List<Reserva> lasReservas = new ArrayList<Reserva>();
+        HashMap<String,Integer> diccionario= new HashMap<String, Integer>();
 
         for (int i = 0; i < 20; i++)
         {
@@ -30,6 +32,9 @@ public class ListadoReservasActivity extends AppCompatActivity
             unaReserva.setLaImagen(laListaGraf.getContext().getResources().getIdentifier(Utilidades.IMAGENES[i],
                     "drawable", laListaGraf.getContext().getPackageName()));
             unaReserva.setNombre(Utilidades.NOMBRE_PARQUES[i]);
+            //Guardar en diccionario.
+            diccionario.put(Utilidades.NOMBRE_PARQUES[i],i);
+
             unaReserva.setUbicacionGeografica(Utilidades.UBICACIONES_GEOGRAFICAS[i]);
             unaReserva.setCalificacion(Utilidades.CALIFICACIONES[i]);
             unaReserva.setCantidadCalificaciones(Utilidades.CANTIDAD_CALIFICACIONES[i] != "" ? Integer.parseInt(Utilidades.CANTIDAD_CALIFICACIONES[i]) : 0);

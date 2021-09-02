@@ -15,17 +15,22 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ecotour.databinding.ActivityScrollingBinding;
 
 import org.w3c.dom.Text;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class InformaciónDeslizableActivity extends AppCompatActivity {
 
     private ActivityScrollingBinding binding;
+
+    static ArrayList<Integer> numeroReservas = new ArrayList<>();
 
     protected Reserva reserva;
 
@@ -79,6 +84,29 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
                 intent.putExtra("reserva", (Serializable) reserva);
                 intent.putExtra("accion", "recomendaciones");
                 startActivity(intent);
+            }
+        });
+        ImageButton favoritos = findViewById(R.id.favoritos_seleccionar);
+        favoritos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*Intent intent = new Intent(getBaseContext(), prueba.class);
+                intent.putExtra("numero", (Serializable) 1);
+                startActivity(intent);*/
+
+                numeroReservas.add(1);
+                Toast.makeText(getBaseContext(), "Agregada a favoritos.", Toast.LENGTH_LONG).show();
+
+
+            }
+        });
+        ImageButton viajes = findViewById(R.id.viajes_seleccionar);
+        viajes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), programarViaje.class);
+                startActivity(intent);
+
             }
         });
     }
