@@ -38,11 +38,20 @@ public class BilleteraFragment extends Fragment implements View.OnClickListener 
 
         //Seleccionar alguna opcion.
         Spinner spinner_noche = (Spinner) vista.findViewById(R.id.spinner_noches);
+        Spinner spinner_habitaciones = (Spinner) vista.findViewById(R.id.spinner_habitaciones);
+        Spinner spinner_personas = (Spinner) vista.findViewById(R.id.spinner_personas);
 
         ArrayAdapter<CharSequence> adapterNoche =ArrayAdapter.createFromResource(getActivity(),R.array.noches,
                 android.R.layout.simple_list_item_1);
+        ArrayAdapter<CharSequence> adapterHabitaciones =ArrayAdapter.createFromResource(getActivity(),R.array.habitaciones,
+                android.R.layout.simple_list_item_1);
+        ArrayAdapter<CharSequence> adapterPersonas =ArrayAdapter.createFromResource(getActivity(),R.array.personas,
+                android.R.layout.simple_list_item_1);
+
 
         spinner_noche.setAdapter(adapterNoche);
+        spinner_habitaciones.setAdapter(adapterHabitaciones);
+        spinner_personas.setAdapter(adapterPersonas);
 
         //Boton
 
