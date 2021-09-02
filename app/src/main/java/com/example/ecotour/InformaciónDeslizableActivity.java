@@ -106,6 +106,7 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
         viajes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                viajes.setBackgroundColor(getResources().getColor(R.color.purple_200));
                 String nombre = reserva.getNombre();
                 int numero = ListadoReservasActivity.diccionario.get(nombre);
                 Intent intent = new Intent(getBaseContext(), programarViaje.class);

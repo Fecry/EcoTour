@@ -13,11 +13,14 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.ecotour.utilidades.Utilidades;
+
 import java.util.ArrayList;
 
 public class BilleteraFragment extends Fragment implements View.OnClickListener {
     ArrayList<String> opcionesArray = new ArrayList<String>();
     String opciones= "";
+    static ArrayList<Integer> reservasBilletera = new ArrayList<Integer>();
     public BilleteraFragment() {
         // Required empty public constructor
     }
@@ -35,21 +38,11 @@ public class BilleteraFragment extends Fragment implements View.OnClickListener 
 
         //Seleccionar alguna opcion.
         Spinner spinner_noche = (Spinner) vista.findViewById(R.id.spinner_noches);
-        Spinner spinner_habitacion = (Spinner) vista.findViewById(R.id.spinner_habitaciones);
-        Spinner spinner_personas = (Spinner) vista.findViewById(R.id.spinner_personas);
 
         ArrayAdapter<CharSequence> adapterNoche =ArrayAdapter.createFromResource(getActivity(),R.array.noches,
                 android.R.layout.simple_list_item_1);
 
-        ArrayAdapter<CharSequence> adapterHabitacion = ArrayAdapter.createFromResource(getActivity(),R.array.habitaciones,
-                android.R.layout.simple_list_item_1);
-
-        ArrayAdapter<CharSequence> adapterPersonas =ArrayAdapter.createFromResource(getActivity(),R.array.personas,
-                android.R.layout.simple_list_item_1);
-
         spinner_noche.setAdapter(adapterNoche);
-        spinner_habitacion.setAdapter(adapterHabitacion);
-        spinner_personas.setAdapter(adapterPersonas);
 
         //Boton
 
@@ -67,28 +60,6 @@ public class BilleteraFragment extends Fragment implements View.OnClickListener 
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-        //Obtener elemento cantidad habitaciones
-        spinner_habitacion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String habitaciones = parent.getItemAtPosition(position).toString();
-                opcionesArray.add(habitaciones);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-        //Obtener elemento cantidad personas
-        spinner_personas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String personas = parent.getItemAtPosition(position).toString();
-                opcionesArray.add(personas);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
 
         return vista;
     }
@@ -97,8 +68,14 @@ public class BilleteraFragment extends Fragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.billera_btn:
-                Toast.makeText(getContext(), opcionesArray.toString(), Toast.LENGTH_LONG).show();
-                startActivity(new Intent(getContext(), programarViaje.class));
+                for(int i=0; i<20;i++){
+                    int presUser = Integer.parseInt(opcionesArray.get(opcionesArray.size()-1));
+                    int reservaPrecio = Utilidades.billeteraPresupuesto[i][0];
+                    if(reservaPrecio<= presUser) {
+                        reservasBilletera.add(Utilidades.billeteraPresupuesto[i][1]);
+                    }
+                }
+                startActivity(new Intent(getContext(), sugerenciasBilletera.class));
                 break;
         }
     }

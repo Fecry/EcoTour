@@ -16,6 +16,7 @@
     <string name="texto_viajes_Fragment">Tus viajes programados</string>
     <string name="Continuar">Sigue explorando...</string>
     <string name="Billetera">Calculadora de presupuesto</string>
+    <string name="BilleteraSugerencias">Reservas sugeridas para tí</string>
     <string name="texto_regresar">Regresar</string>
     <string name="ingresar_email">Ingresa tu Email</string>
     <string name="restablecer">Restablecer contraseña</string>
@@ -42,10 +43,14 @@
     //Billetera
 
     <string-array name="noches">
-        <item>Precio noche</item>
-        <item>$10.000 - $50.000</item>
-        <item>$10.000 - $100.000</item>
-        <item>$100.000 -</item>
+        <item>Máximo precio noche/persona</item>
+        <item>15000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>40000</item>
+        <item>50000</item>
+
+
     </string-array>
 
     <string-array name="habitaciones">

@@ -1,7 +1,33 @@
 package com.example.ecotour.utilidades;
 
+import java.util.HashMap;
+
 public interface Utilidades
 {
+
+    Integer[][] billeteraPresupuesto = {
+            {15000,1},
+            {10000,2},
+            {25000,3},
+            {30000,4},
+            {35000,5},
+            {40000,6},
+            {45000,7},
+            {50000,8},
+            {55000,9},
+            {60000,10},
+            {10000,11},
+            {15000,12},
+            {20000,13},
+            {25000,14},
+            {30000,15},
+            {35000,16},
+            {40000,17},
+            {45000,18},
+            {50000,19},
+            {55000,20}
+    };
+
     String[] NOMBRE_PARQUES = {"Parque Nacional Natural Gorgona",
             "Santuario de Flora y Fauna Malpelo",
             "Santuario de Flora y Fauna Iguaque",

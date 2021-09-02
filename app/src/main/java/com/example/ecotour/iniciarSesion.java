@@ -148,11 +148,11 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
                         FirebaseUser user = mAuth.getCurrentUser();
-                        startActivity(new Intent(iniciarSesion.this, navegacion.class));
-                        Toast.makeText(iniciarSesion.this, "Ingreso exitoso.", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(iniciarSesion.this, navegacion.class);
-                        intent.putExtra("email", (Serializable) user);
+                        Toast.makeText(iniciarSesion.this, "Ingreso exitoso.", Toast.LENGTH_LONG).show();
+                        intent.putExtra("email", (Serializable) "Con Google");
                         startActivity(intent);
+
 
                     } else {
                         // If sign in fails, display a message to the user.
