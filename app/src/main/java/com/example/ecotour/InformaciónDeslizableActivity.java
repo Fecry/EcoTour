@@ -31,7 +31,6 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
     private ActivityScrollingBinding binding;
 
     static ArrayList<Integer> numeroReservas = new ArrayList<>();
-
     protected Reserva reserva;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -90,21 +89,18 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
         favoritos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent intent = new Intent(getBaseContext(), prueba.class);
-                intent.putExtra("numero", (Serializable) 1);
-                startActivity(intent);*/
 
                 numeroReservas.add(1);
                 Toast.makeText(getBaseContext(), "Agregada a favoritos.", Toast.LENGTH_LONG).show();
-
-
             }
         });
         ImageButton viajes = findViewById(R.id.viajes_seleccionar);
         viajes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(getBaseContext(), programarViaje.class);
+                intent.putExtra("numeroViaje", (Serializable) 2);
                 startActivity(intent);
 
             }

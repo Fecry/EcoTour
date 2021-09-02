@@ -10,15 +10,22 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.ecotour.entidades.InfoAdicionales;
+import com.example.ecotour.utilidades.Utilidades;
+
 import java.util.ArrayList;
 
 public class programarViaje extends AppCompatActivity implements View.OnClickListener {
+
+    static ArrayList<Integer> numeroReservaProgramada = new ArrayList<>();
+
     ArrayList<String> opcionesArray = new ArrayList<String>();
     Switch notificacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_programar_viaje);
+        //Agregar reserva a Fragment Viajes.
 
         //Boton
         Button guardar = findViewById(R.id.programar_btn);
@@ -104,6 +111,7 @@ public class programarViaje extends AppCompatActivity implements View.OnClickLis
                 }
                 break;
             case R.id.programar_btn:
+                numeroReservaProgramada.add((int) getIntent().getSerializableExtra("numeroViaje"));
                 Toast.makeText(programarViaje.this, "Viaje programado. ", Toast.LENGTH_LONG).show();
                 Toast.makeText(programarViaje.this, opcionesArray.toString(), Toast.LENGTH_LONG).show();
                 break;
