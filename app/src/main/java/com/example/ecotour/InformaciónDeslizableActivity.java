@@ -93,7 +93,8 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
                 String nombre = reserva.getNombre();
                 int numero = ListadoReservasActivity.diccionario.get(nombre);
                 if(numeroReservas.contains(numero)){
-                    Toast.makeText(getBaseContext(), "Esta reserva ya ha sido agregada a favoritos.", Toast.LENGTH_LONG).show();
+                    numeroReservas.remove(new Integer(numero));
+                    Toast.makeText(getBaseContext(), "Esta reserva se ha eliminado de favoritos.", Toast.LENGTH_LONG).show();
                 }
                 else{
                     numeroReservas.add(numero);
