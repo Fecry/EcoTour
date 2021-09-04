@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.ecotour.adaptadores.AdapterListaReservas;
-import com.example.ecotour.datos.ManejadorBD;
 import com.example.ecotour.entidades.InfoAdicionales;
 import com.example.ecotour.entidades.Reserva;
 import com.example.ecotour.utilidades.Utilidades;
@@ -27,8 +26,11 @@ public class ListadoReservasActivity extends AppCompatActivity
         ListView laListaGraf = (ListView) findViewById(R.id.listaReservas);
         List<Reserva> lasReservas = new ArrayList<Reserva>();
 
+        // Se recorren las 20 reservas guardadas en la interfaz 'Utilidades' y se crea un objeto tipo
+        // 'Reserva' por cada una de ellas
         for (int i = 0; i < 20; i++)
         {
+            // 'unaReserva' representa cada una de las reservas
             Reserva unaReserva = new Reserva();
             unaReserva.setLaImagen(laListaGraf.getContext().getResources().getIdentifier(Utilidades.IMAGENES[i],
                     "drawable", laListaGraf.getContext().getPackageName()));
@@ -43,19 +45,26 @@ public class ListadoReservasActivity extends AppCompatActivity
             unaReserva.setUbicacionesCercanas(Utilidades.POBLACIONES_CERCANAS[i]);
             unaReserva.setFloraYFauna(Utilidades.FLORA_FAUNA[i]);
             unaReserva.setRecomendaciones(Utilidades.RECOMENDACIONES[i]);
+
+            //Se recorren las rutas disponibles por cada reserva
             for (int j = 0; j < Utilidades.NOMBRES_RUTAS[i].length; j++)
             {
                 InfoAdicionales cadaInfo = new InfoAdicionales();
                 cadaInfo.setNombreRuta(Utilidades.NOMBRES_RUTAS[i][j]);
                 cadaInfo.setDescripcion(Utilidades.RUTAS[i][j]);
 
+                //Se almacenan las rutas que son encapsuladas en un objeto 'InfoAdicional'
                 unaReserva.getRutas().add(cadaInfo);
             }
+            //Se añade la reserva al array para posteriormente enviársela al adaptador que se
+            // encargará de dibujar cada reserva
             lasReservas.add(unaReserva);
         }
 
+        //Se arma el adaptador y se le pasan las reservas a ser dibujadas
         AdapterListaReservas elAdaptador = new AdapterListaReservas(this, lasReservas);
 
+        //Se le asigna a la lista scrolleable el adaptador con las reservas
         laListaGraf.setAdapter(elAdaptador);
     }
 }

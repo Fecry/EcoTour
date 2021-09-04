@@ -49,6 +49,7 @@ public class AdapterInfoAdicional extends BaseAdapter
             v = informacion.inflate(R.layout.vista_lista_adicionales, null);
         }
 
+        //Seteo de la infiormación en la ventana de adicionales
         InfoAdicionales cadaAdicional = adicionales.get(i);
 
         TextView sub = (TextView) v.findViewById(R.id.subtitulo);

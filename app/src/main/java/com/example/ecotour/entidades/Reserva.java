@@ -3,6 +3,7 @@ package com.example.ecotour.entidades;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+// Entidad que contiene toda la información de una reserva
 public class Reserva implements Serializable
 {
     private int laImagen;

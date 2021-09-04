@@ -38,17 +38,21 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //Se recupera la reserva enviada como parámetro
         reserva = (Reserva) getIntent().getSerializableExtra("reserva");
 
+        // Se crea el scroll de la información de la reserva
         binding = ActivityScrollingBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //Se carga el título y la imagen
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
         CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
         toolBarLayout.setTitle(this.reserva.getNombre());
         toolBarLayout.setBackground(toolbar.getContext().getDrawable(this.reserva.getLaImagen()));
 
+        //Seteo de las múltiples informaciones de cada reserva
         TextView nombre = (TextView) binding.componenteScroll.nombre;
         nombre.setText(reserva.getNombre());
 
@@ -64,6 +68,7 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
         TextView floraFauna = (TextView) binding.componenteScroll.floraFauna;
         floraFauna.setText(reserva.getFloraYFauna());
 
+        //Boton de información adicional
         Button botonComoLlegar = (Button) binding.componenteScroll.botonComoLlegar;
         botonComoLlegar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +80,7 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
             }
         });
 
+        //Boton de información adicional
         Button botonRecomendaciones = (Button) binding.componenteScroll.botonRecomendaciones;
         botonRecomendaciones.setOnClickListener(new View.OnClickListener() {
             @Override
