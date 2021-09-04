@@ -11,7 +11,7 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="413dp"
-        android:layout_height="655dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,17 +99,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:background="#1E3C06" />
+
             <LinearLayout
+                android:id="@+id/favoritos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#1AA9D795"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/texto_favorito"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
                     android:background="@android:color/transparent"
                     android:fontFamily="@font/scada"
                     android:text="@string/texto_favoritos"
@@ -135,8 +138,8 @@
                 android:id="@+id/texto_destinos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/scada"
                 android:text="@string/texto_destinos"
@@ -221,6 +224,13 @@
                     android:contentDescription="@string/descripción"
                     app:srcCompat="@drawable/portapapeles2" />
             </LinearLayout>
+
+            <View
+                android:id="@+id/divider17"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="70dp"
+                android:background="#1E3C06" />
 
         </LinearLayout>
     </ScrollView>

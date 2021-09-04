@@ -50,6 +50,10 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
             case R.id.ListadoReservasLink:
                 startActivity(new Intent(getContext(), ListadoReservasActivity.class));
                 break;
+
+            case R.id.favoritos:
+                startActivity(new Intent(getContext(), FavoritosFragment.class));
+                break;
         }
     }
 

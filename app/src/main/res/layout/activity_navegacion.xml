@@ -26,12 +26,15 @@
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="695dp"
+        android:layout_height="match_parent"
         android:background="#2086A846"
         app:defaultNavHost="true"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/my_nav"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintBottom_toBottomOf="@id/NavigationView"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registrarse_btn3"
+        app:navGraph="@navigation/my_nav" />
 
     <Button
         android:id="@+id/registrarse_btn3"
