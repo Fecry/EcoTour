@@ -3,6 +3,7 @@ package com.example.ecotour;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -16,6 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.io.Serializable;
 
 
 public class Registrarse extends AppCompatActivity implements View.OnClickListener {
@@ -41,6 +44,7 @@ public class Registrarse extends AppCompatActivity implements View.OnClickListen
         verificarContraseña = findViewById(R.id.verificarContraseña);
 
         progressBar = findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.INVISIBLE);
 
 
     }
@@ -105,7 +109,7 @@ public class Registrarse extends AppCompatActivity implements View.OnClickListen
             return;
         }
 
-        progressBar.setVisibility(View.INVISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -124,6 +128,10 @@ public class Registrarse extends AppCompatActivity implements View.OnClickListen
                                     if (task.isSuccessful()) {
                                         Toast.makeText(Registrarse.this, "El usuario ha sido registrado exitosamente.", Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.VISIBLE);
+                                        Intent intent = new Intent(Registrarse.this, navegacion.class);
+                                        intent.putExtra("email", (Serializable) name);
+                                        startActivity(intent);
+                                        progressBar.setVisibility(View.GONE);
 
                                     } else {
                                         Toast.makeText(Registrarse.this, "No se ha podido registrar, intente de nuevo.", Toast.LENGTH_LONG).show();

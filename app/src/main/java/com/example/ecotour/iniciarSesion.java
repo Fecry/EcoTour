@@ -77,6 +77,7 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
         textContra = findViewById(R.id.contraseña_);
 
         progressBar = findViewById(R.id.progressBar2);
+        progressBar.setVisibility(View.INVISIBLE);
 
         crearSolicitudGoogle();
         // Google
@@ -107,6 +108,7 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(this, contra_olvidada.class));
                 break;
             case R.id.google_btn:
+                progressBar.setVisibility(View.VISIBLE);
                 resultLauncher.launch(new Intent(mGoogleSignInClient.getSignInIntent()));
                 break;
         }
@@ -152,11 +154,13 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
                         Toast.makeText(iniciarSesion.this, "Ingreso exitoso.", Toast.LENGTH_LONG).show();
                         intent.putExtra("email", (Serializable) "Con Google");
                         startActivity(intent);
+                        progressBar.setVisibility(View.INVISIBLE);
 
 
                     } else {
                         // If sign in fails, display a message to the user.
                         Toast.makeText(iniciarSesion.this, "Lo sentimos, error en la autenticación.", Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.INVISIBLE);
                     }
                 });
     }
@@ -189,8 +193,8 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
             return;
 
         }
-        progressBar.setVisibility(View.VISIBLE);
 
+        progressBar.setVisibility(View.VISIBLE);
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if(task.isSuccessful()){
                 Intent intent = new Intent(iniciarSesion.this, navegacion.class);
@@ -199,9 +203,11 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
                 int arroba = email.indexOf("@");
                 intent.putExtra("email", (Serializable) email.substring(0,arroba));
                 startActivity(intent);
+                progressBar.setVisibility(View.INVISIBLE);
             }
             else{
                 Toast.makeText(iniciarSesion.this,"Datos incorrectos, inténtalo de nuevo", Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.INVISIBLE);
             }
         });
     }
