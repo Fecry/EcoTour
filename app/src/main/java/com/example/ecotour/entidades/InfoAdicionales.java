@@ -2,6 +2,7 @@ package com.example.ecotour.entidades;
 
 import java.io.Serializable;
 
+// Entidad que representa información adicional repetitiva en cada reserva
 public class InfoAdicionales implements Serializable
 {
     private String nombreRuta;
