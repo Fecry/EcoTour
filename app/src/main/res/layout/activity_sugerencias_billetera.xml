@@ -26,7 +26,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="42dp"
                 android:background="#86A846"
                 android:orientation="vertical">
 
@@ -37,6 +37,7 @@
                     android:layout_gravity="center_horizontal"
                     android:background="#86A846"
                     android:fontFamily="@font/scada"
+                    android:gravity="center_horizontal"
                     android:lineSpacingExtra="10sp"
                     android:text="@string/BilleteraSugerencias"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"

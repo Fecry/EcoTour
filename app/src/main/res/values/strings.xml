@@ -29,7 +29,7 @@
     <string name="recuperar_contra">Recuperar contraseña</string>
 
     //Main
-    <string name="ingreso">Ingresar</string>
+    <string name="ingreso">Ingresar sin iniciar sesión</string>
     <string name="iniciar">Iniciar Sesión</string>
 
     //Registrarse e inicar
@@ -37,7 +37,7 @@
     <string name="email">Correo</string>
     <string name="password">Contraseña</string>
     <string name="continua">Continuar</string>
-    <string name="olvide_contra">Olvidé contraseña</string>
+    <string name="olvide_contra">Olvidé mi contraseña</string>
 
 
     //Billetera

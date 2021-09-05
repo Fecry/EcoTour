@@ -2,6 +2,7 @@ package com.example.ecotour;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 public class programarViaje extends AppCompatActivity implements View.OnClickListener {
 
     static ArrayList<Integer> numeroReservaProgramada = new ArrayList<>();
+    private String año, mes, dia1, dia2;
 
     ArrayList<String> opcionesArray = new ArrayList<String>();
     Switch notificacion;
@@ -59,7 +61,7 @@ public class programarViaje extends AppCompatActivity implements View.OnClickLis
         spinner_año.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String año = parent.getItemAtPosition(position).toString();
+                año = parent.getItemAtPosition(position).toString();
                 opcionesArray.add(año);
             }
             @Override
@@ -71,7 +73,7 @@ public class programarViaje extends AppCompatActivity implements View.OnClickLis
         spinner_mes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String mes = parent.getItemAtPosition(position).toString();
+                mes = parent.getItemAtPosition(position).toString();
                 opcionesArray.add(mes);
             }
             @Override
@@ -82,7 +84,7 @@ public class programarViaje extends AppCompatActivity implements View.OnClickLis
         spinner_dia1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String dia1 = parent.getItemAtPosition(position).toString();
+                dia1 = parent.getItemAtPosition(position).toString();
                 opcionesArray.add(dia1);
             }
             @Override
@@ -93,7 +95,7 @@ public class programarViaje extends AppCompatActivity implements View.OnClickLis
         spinner_dia2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String dia2 = parent.getItemAtPosition(position).toString();
+                dia2 = parent.getItemAtPosition(position).toString();
                 opcionesArray.add(dia2);
             }
             @Override
@@ -116,9 +118,7 @@ public class programarViaje extends AppCompatActivity implements View.OnClickLis
                     Toast.makeText(programarViaje.this, "Ya se ha programado un viaje con esta reserva. ", Toast.LENGTH_LONG).show();
                 }else{
                     numeroReservaProgramada.add(numero);
-                    Toast.makeText(programarViaje.this, "Viaje programado. ", Toast.LENGTH_LONG).show();
-                    Toast.makeText(programarViaje.this, opcionesArray.toString(), Toast.LENGTH_LONG).show();
-
+                    Toast.makeText(programarViaje.this, "Se ha programado su viaje entre los días "+dia1+ " - "+dia2+ " del mes de "+ mes+ " del año "+ año+".", Toast.LENGTH_LONG).show();
                 }
                 break;
         }
