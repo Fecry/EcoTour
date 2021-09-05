@@ -11,7 +11,7 @@
     <string name="texto_logo">¡La Naturaleza a un paso de ti!</string>
     <string name="texto_favoritos">Tus Lugares Favoritos</string>
     <string name="texto_destinos">Descubre destinos cerca a ti</string>
-    <string name="texto_reservas">Listado reservas</string>
+    <string name="texto_reservas">Listado de las reservas</string>
     <string name="texto_favoritos_Fragment">Tus favoritos</string>
     <string name="texto_viajes_Fragment">Tus viajes programados</string>
     <string name="Continuar">Sigue explorando...</string>
