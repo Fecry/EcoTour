@@ -58,12 +58,6 @@
                         android:background="#FFFFFF"
                         app:srcCompat="@drawable/avion" />
 
-                    <View
-                        android:id="@+id/divider16"
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.5"
-                        android:background="#FFFFFF" />
                 </LinearLayout>
 
             </LinearLayout>
