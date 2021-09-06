@@ -49,7 +49,7 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
         CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
-        toolBarLayout.setTitle(this.reserva.getNombre());
+        toolBarLayout.setTitle(" ");
         toolBarLayout.setBackground(toolbar.getContext().getDrawable(this.reserva.getLaImagen()));
 
         //Seteo de las múltiples informaciones de cada reserva
