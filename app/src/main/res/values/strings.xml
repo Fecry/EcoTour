@@ -21,6 +21,8 @@
     <string name="ingresar_email">Ingresa tu Email</string>
     <string name="restablecer">Restablecer contraseña</string>
 
+    <string name="error_permiso">Para acceder a todas las funcionalidades permite acceder a la ubicación</string>
+
 
     <string name="indicadorMaps_boton">Indicación</string>
 
