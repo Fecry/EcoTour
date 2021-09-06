@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
+import androidx.core.content.ContextCompat;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -46,7 +47,8 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnMapClickListener {
+
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnMapClickListener, GoogleMap.OnMyLocationButtonClickListener, ActivityCompat.OnRequestPermissionsResultCallback {
 
     protected GoogleMap mMap;
     protected ActivityMapsBinding binding;
@@ -55,6 +57,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     double userLongitude = 0.0;
     double lastMarkerLatitude = 0.0;
     double lastMarkerLongitude = 0.0;
+
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
     JsonObjectRequest jsonObjectRequest;
     RequestQueue request;
@@ -88,6 +92,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.setOnMarkerClickListener(this);
         mMap.setOnMapClickListener(this);
+        mMap.setOnMyLocationButtonClickListener(this);
+
         //mMap.setOnInfoWindowClickListener(this);
         //mMap.setOnInfoWindowCloseListener(this);
 
@@ -126,19 +132,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng colombia = new LatLng(4.289789505201945, -74.20874620109208);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(colombia, 5.5f));
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+        enableMyLocation();
+
+    }
+
+    private void enableMyLocation() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            if (mMap != null) {
+                mMap.setMyLocationEnabled(true);
+            }
+        } else {
+            // Permission to access the location is missing. Show rationale and request permission
+            PermissionUtils.requestPermission(this, LOCATION_PERMISSION_REQUEST_CODE, Manifest.permission.ACCESS_FINE_LOCATION, true);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode != LOCATION_PERMISSION_REQUEST_CODE) {
             return;
         }
-        mMap.setMyLocationEnabled(true);
-        //userUbication();
 
+        if (PermissionUtils.isPermissionGranted(permissions, grantResults, Manifest.permission.ACCESS_FINE_LOCATION)) {
+            enableMyLocation();
+        } else {
+            // Permission was denied. Display an error message
+            // Display the missing permission error dialog when the fragments resume.
+            //permissionDenied = true;
+        }
     }
 
     private void updateLocation(Location location) {
@@ -147,7 +169,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             userLongitude = location.getLongitude();
             LatLng marker = new LatLng(userLatitude, userLongitude);
             //mMap.addMarker(new MarkerOptions().position(marker).title("Mi Posición Actual"));
-            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker, 9), 1000, null);
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker, 8), 1000, null);
 
         }
     }
@@ -160,14 +182,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     };
 
     private void userUbication() {
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         updateLocation(location);
-        //locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,15000,0,locListener);
     }
+
+
 
 
     private void webServiceObtenerRuta(String latitudInicial, String longitudInicial, String latitudFinal, String longitudFinal) {
@@ -416,6 +439,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
+    @Override
+    public boolean onMyLocationButtonClick() {
 
+        userUbication();
+
+        return true;
+    }
 
 }

@@ -21,21 +21,20 @@
 
     <EditText
         android:id="@+id/correo_"
-        android:layout_width="365dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="#B3A9D795"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.403" />
 
     <EditText
         android:id="@+id/contraseña_"
-        android:layout_width="365dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="#B3A9D795"
         android:bufferType="normal"
@@ -43,10 +42,9 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.538" />
+        app:layout_constraintVertical_bias="0.547" />
 
     <ProgressBar
         android:id="@+id/progressBar2"
@@ -55,10 +53,10 @@
         android:layout_height="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619"
+        app:layout_constraintVertical_bias="0.915"
         tools:visibility="invisible" />
 
     <Button
@@ -122,15 +120,16 @@
         android:layout_height="57dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.615"
+        app:layout_constraintVertical_bias="0.627"
         app:srcCompat="@drawable/googleg_standard_color_18" />
 
     <TextView
         android:id="@+id/contraseña_btn"
-        android:layout_width="130dp"
-        android:layout_height="31dp"
+        android:layout_width="161dp"
+        android:layout_height="34dp"
         android:background="#3628E1AD"
         android:fontFamily="@font/scada"
         android:gravity="center_horizontal|center_vertical"
@@ -140,15 +139,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.772"
+        app:layout_constraintHorizontal_bias="0.852"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705" />
+        app:layout_constraintVertical_bias="0.704" />
 
     <TextView
         android:id="@+id/registrarse_btn1"
-        android:layout_width="130dp"
-        android:layout_height="31dp"
+        android:layout_width="161dp"
+        android:layout_height="34dp"
         android:background="#3628E1AD"
         android:fontFamily="@font/scada"
         android:gravity="center_horizontal|center_vertical"
@@ -158,9 +157,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705" />
+        app:layout_constraintVertical_bias="0.704" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

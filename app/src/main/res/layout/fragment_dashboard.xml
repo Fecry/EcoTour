@@ -64,9 +64,10 @@
 
                 <ImageButton
                     android:id="@+id/imageButton5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="137dp"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_width="242dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginTop="-15dp"
                     android:background="#1AA9D795"
                     android:contentDescription="@string/descripción"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -79,6 +80,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="-50dp"
                 android:background="#86A846"
                 android:orientation="vertical">
 
@@ -89,6 +91,7 @@
                     android:layout_gravity="center_horizontal"
                     android:fontFamily="@font/scada"
                     android:text="@string/texto_logo"
+                    android:textColor="#000000"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     tools:text="@string/texto_logo" />
@@ -101,7 +104,7 @@
                 android:background="#1E3C06" />
 
             <LinearLayout
-                android:id="@+id/favoritos"
+                android:id="@+id/ListadoReservasLink"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#1AA9D795"
@@ -112,20 +115,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:background="@android:color/transparent"
                     android:fontFamily="@font/scada"
-                    android:text="@string/texto_favoritos"
+                    android:text="@string/texto_reservas"
                     android:textSize="34sp"
-                    tools:text="@string/texto_favoritos" />
+                    tools:text="@string/texto_reservas" />
 
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
+                    android:layout_height="400dp"
+                    android:layout_marginTop="-50dp"
+                    android:layout_marginBottom="-50dp"
                     android:contentDescription="@string/descripción"
-                    app:srcCompat="@drawable/corazon" />
+                    app:srcCompat="@drawable/collage_reservas2" />
+
             </LinearLayout>
 
             <View
@@ -197,33 +202,6 @@
                 android:layout_marginBottom="5dp"
                 android:background="#1E3C06" />
 
-
-            <LinearLayout
-                android:id="@+id/ListadoReservasLink"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/texto_reservas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:background="@android:color/transparent"
-                    android:fontFamily="@font/scada"
-                    android:text="@string/texto_reservas"
-                    android:textSize="24sp"
-                    tools:text="@string/texto_reservas" />
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:contentDescription="@string/descripción"
-                    app:srcCompat="@drawable/portapapeles2" />
-            </LinearLayout>
 
             <View
                 android:id="@+id/divider17"

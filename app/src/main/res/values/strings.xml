@@ -11,7 +11,7 @@
     <string name="texto_logo">¡La Naturaleza a un paso de ti!</string>
     <string name="texto_favoritos">Tus Lugares Favoritos</string>
     <string name="texto_destinos">Descubre destinos cerca a ti</string>
-    <string name="texto_reservas">Listado reservas</string>
+    <string name="texto_reservas">Listado de las reservas</string>
     <string name="texto_favoritos_Fragment">Tus favoritos</string>
     <string name="texto_viajes_Fragment">Tus viajes programados</string>
     <string name="Continuar">Sigue explorando...</string>
@@ -21,6 +21,8 @@
     <string name="ingresar_email">Ingresa tu Email</string>
     <string name="restablecer">Restablecer contraseña</string>
 
+    <string name="error_permiso">Para acceder a todas las funcionalidades permite acceder a la ubicación</string>
+
 
     <string name="indicadorMaps_boton">Indicación</string>
 
@@ -29,7 +31,7 @@
     <string name="recuperar_contra">Recuperar contraseña</string>
 
     //Main
-    <string name="ingreso">Ingresar</string>
+    <string name="ingreso">Ingresar sin iniciar sesión</string>
     <string name="iniciar">Iniciar Sesión</string>
 
     //Registrarse e inicar
@@ -37,7 +39,7 @@
     <string name="email">Correo</string>
     <string name="password">Contraseña</string>
     <string name="continua">Continuar</string>
-    <string name="olvide_contra">Olvidé contraseña</string>
+    <string name="olvide_contra">Olvidé mi contraseña</string>
 
 
     //Billetera

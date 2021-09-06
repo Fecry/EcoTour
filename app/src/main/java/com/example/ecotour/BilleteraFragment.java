@@ -19,7 +19,6 @@ import java.util.ArrayList;
 
 public class BilleteraFragment extends Fragment implements View.OnClickListener {
     ArrayList<String> opcionesArray = new ArrayList<String>();
-    String opciones= "";
     static ArrayList<Integer> reservasBilletera = new ArrayList<Integer>();
     public BilleteraFragment() {
         // Required empty public constructor
@@ -77,14 +76,18 @@ public class BilleteraFragment extends Fragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.billera_btn:
-                for(int i=0; i<20;i++){
-                    int presUser = Integer.parseInt(opcionesArray.get(opcionesArray.size()-1));
-                    int reservaPrecio = Utilidades.billeteraPresupuesto[i][0];
-                    if(reservaPrecio<= presUser) {
-                        reservasBilletera.add(Utilidades.billeteraPresupuesto[i][1]);
+                if(!(opcionesArray.size()==1)){
+                    for(int i=0; i<20;i++){
+                        int presUser = Integer.parseInt(opcionesArray.get(opcionesArray.size()-1));
+                        int reservaPrecio = Utilidades.billeteraPresupuesto[i][0];
+                        if(reservaPrecio<= presUser) {
+                            reservasBilletera.add(Utilidades.billeteraPresupuesto[i][1]);
+                        }
                     }
+                    startActivity(new Intent(getContext(), sugerenciasBilletera.class));
+                }else{
+                    Toast.makeText(getContext(),"Por favor, seleccione todas las preferencias.", Toast.LENGTH_LONG).show();
                 }
-                startActivity(new Intent(getContext(), sugerenciasBilletera.class));
                 break;
         }
     }
