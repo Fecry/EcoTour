@@ -110,6 +110,13 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
             case R.id.google_btn:
                 progressBar.setVisibility(View.VISIBLE);
                 resultLauncher.launch(new Intent(mGoogleSignInClient.getSignInIntent()));
+
+                GoogleSignInOptions gso = new GoogleSignInOptions.
+                        Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).
+                        build();
+
+                GoogleSignInClient googleSignInClient=GoogleSignIn.getClient(this,gso);
+                googleSignInClient.signOut();
                 break;
         }
     }
@@ -152,7 +159,7 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
                         FirebaseUser user = mAuth.getCurrentUser();
                         Intent intent = new Intent(iniciarSesion.this, navegacion.class);
                         Toast.makeText(iniciarSesion.this, "Ingreso exitoso.", Toast.LENGTH_LONG).show();
-                        intent.putExtra("email", (Serializable) "Con Google");
+                        intent.putExtra("nombre", (Serializable) user.getDisplayName());
                         startActivity(intent);
                         progressBar.setVisibility(View.INVISIBLE);
 

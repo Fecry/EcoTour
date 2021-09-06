@@ -14,11 +14,15 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Registrarse extends AppCompatActivity implements View.OnClickListener {
@@ -27,6 +31,7 @@ public class Registrarse extends AppCompatActivity implements View.OnClickListen
     private EditText nombre, correo;
     private EditText contraseña, verificarContraseña;
     private ProgressBar progressBar;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,7 @@ public class Registrarse extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.activity_registrarse);
 
         mAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
         Button registrar = findViewById(R.id.registrarse_btn2);
         registrar.setOnClickListener(this);
@@ -49,7 +55,7 @@ public class Registrarse extends AppCompatActivity implements View.OnClickListen
 
     }
 
-    @Override
+   @Override
     public void onClick(View view) {
 
         switch (view.getId()){
@@ -127,9 +133,19 @@ public class Registrarse extends AppCompatActivity implements View.OnClickListen
 
                                     if (task.isSuccessful()) {
                                         Toast.makeText(Registrarse.this, "El usuario ha sido registrado exitosamente.", Toast.LENGTH_LONG).show();
-                                        progressBar.setVisibility(View.VISIBLE);
+
+                                        //Obtener id con el que se registro en Firebase
+                                        String id = mAuth.getCurrentUser().getUid();
+
+                                        //crear mapa de datos
+                                        HashMap<String, Object> mapaDatos = new HashMap<>();
+                                        mapaDatos.put("nombre", name);
+                                        //Ingresar datos del user a Firebase
+                                        databaseReference.child("Users").child(id).setValue(mapaDatos);
+
+                                        // Mandar nombre a navegacion para poder cambiar String del boton.
                                         Intent intent = new Intent(Registrarse.this, navegacion.class);
-                                        intent.putExtra("email", (Serializable) name);
+                                        intent.putExtra("nombre", (Serializable) name);
                                         startActivity(intent);
                                         progressBar.setVisibility(View.GONE);
 

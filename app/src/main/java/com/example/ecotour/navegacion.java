@@ -28,8 +28,8 @@ public class navegacion extends AppCompatActivity implements View.OnClickListene
         BottomNavigationView botonNavega =findViewById(R.id.NavigationView);
         botonNavega.setOnNavigationItemSelectedListener(navListener);
 
-        if(getIntent().getSerializableExtra("email")!=null){
-            String cambio = (String) getIntent().getSerializableExtra("email");
+        if(getIntent().getSerializableExtra("nombre")!=null){
+            String cambio = (String) getIntent().getSerializableExtra("nombre");
             inicio.setText(cambio);
         }
     }
