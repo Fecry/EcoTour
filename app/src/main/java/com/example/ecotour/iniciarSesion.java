@@ -35,11 +35,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
 import java.util.zip.Inflater;
@@ -50,10 +45,10 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
     private Button inicio;
     private Button continuar;
     private ImageButton google;
+    static String cambio;
 
     private EditText textCorreo, textContra;
     private FirebaseAuth mAuth;
-    private DatabaseReference databaseReference;
 
     private ProgressBar progressBar;
     private GoogleSignInClient mGoogleSignInClient;
@@ -65,7 +60,6 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_iniciar_sesion);
 
         mAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference(); // Nodo principal
 
         inicio = findViewById(R.id.iniciar_btn2);
         inicio.setOnClickListener(this);
@@ -116,6 +110,13 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
             case R.id.google_btn:
                 progressBar.setVisibility(View.VISIBLE);
                 resultLauncher.launch(new Intent(mGoogleSignInClient.getSignInIntent()));
+
+                GoogleSignInOptions gso = new GoogleSignInOptions.
+                        Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).
+                        build();
+
+                GoogleSignInClient googleSignInClient=GoogleSignIn.getClient(this,gso);
+                googleSignInClient.signOut();
                 break;
         }
     }
@@ -158,7 +159,7 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
                         FirebaseUser user = mAuth.getCurrentUser();
                         Intent intent = new Intent(iniciarSesion.this, navegacion.class);
                         Toast.makeText(iniciarSesion.this, "Ingreso exitoso.", Toast.LENGTH_LONG).show();
-                        intent.putExtra("email", (Serializable) "Con Google");
+                        intent.putExtra("nombre", (Serializable) user.getDisplayName());
                         startActivity(intent);
                         progressBar.setVisibility(View.INVISIBLE);
 
@@ -206,26 +207,10 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
                 Intent intent = new Intent(iniciarSesion.this, navegacion.class);
                 Toast.makeText(iniciarSesion.this, "Ingreso exitoso.", Toast.LENGTH_LONG).show();
 
-                //Obtener nombre de persona.
-                //id de persona.
-                String id = mAuth.getCurrentUser().getUid();
-
-                databaseReference.child("Users").child(id).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(snapshot.exists()){
-
-                            String nombre = snapshot.child("nombre").getValue().toString();
-                            intent.putExtra("nombre", (Serializable) nombre);
-                            startActivity(intent);
-                            progressBar.setVisibility(View.INVISIBLE);
-                        }
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
+                int arroba = email.indexOf("@");
+                intent.putExtra("email", (Serializable) email.substring(0,arroba));
+                startActivity(intent);
+                progressBar.setVisibility(View.INVISIBLE);
             }
             else{
                 Toast.makeText(iniciarSesion.this,"Datos incorrectos, inténtalo de nuevo", Toast.LENGTH_LONG).show();
