@@ -1,22 +1,22 @@
 [
 {
     "name": "Parque nacional natural Cueva de los Guácharos",
-    "longitude": -76.23937609754695, "latitude": 1.3698841106870465
+    "longitude": -76.19060728855148, "latitude": 1.658648187844764
 },
 {
 	"name": "Parque nacional natural Sierra Nevada de Santa Marta",
-    "longitude": -73.60862156425645, "latitude": 10.934294151132697
+    "longitude": -73.83038783554454, "latitude": 11.169592475044206
 },
 {
 	"name": "Parque nacional natural Tayrona",
-    "longitude": -74.0658312039217, "latitude": 11.30663026305676
+    "longitude": -74.11765681107461, "latitude": 11.276255640350538
 },
 {
 	"name": "Parque Nacional Natural Farallones De Cal, Cali, Valle del Cauca",
-    "longitude": -77.10496517220314, "latitude": 3.4156558064242053
+    "longitude": -76.59593673395565, "latitude": 3.4468894305194397
 },
 {
-    "name": "parque nacional natural puracé",
+    "name": "Parque Nacional Natural Puracé",
     "longitude": -76.36630323989291, "latitude": 2.14129382759205
 },
 {
@@ -25,23 +25,23 @@
 },
 {
     "name": "Parque nacional natural El Tuparro",
-    "longitude": -68.16154718230005, "latitude": 5.500501127167772
+    "longitude": -68.61551870992837, "latitude": 5.26454299064673
 },
 {
     "name": "Parque nacional natural Sierra de La Macarena",
-    "longitude":  -73.90415284159889, "latitude": 2.9760694566438852
+    "longitude":  -73.83627423526045, "latitude": 2.9899202679756947
 },
 {
     "name": "Parque nacional natural Las Orquídeas",
-    "longitude": -76.24467727509601, "latitude": 6.537247899915269
+    "longitude": -76.16079825377685, "latitude": 6.35709935090223
 },
 {
     "name": "Parque nacional natural de Los Katíos",
-    "longitude": -76.99957064862556, "latitude": 7.6669554847427435
+    "longitude": -76.96763207756626, "latitude": 7.651290355726053
 },
 {
     "name": "Parque nacional natural Los Nevados",
-    "longitude": -75.32564546871102, "latitude": 4.830383920149933
+    "longitude": -75.35741015454411, "latitude": 4.831402971868928
 },
 {
     "name": "Parque nacional natural Amacayacu",
@@ -49,19 +49,19 @@
 },
 {
     "name": "Parque nacional natural Las Hermosas",
-    "longitude": -75.94260982113066, "latitude": 3.537708847791701
+    "longitude": -76.0991259621485, "latitude": 3.6547037535402698
 },
 {
     "name": "Parque nacional natural Nevado del Huila",
-    "longitude": -76.03285745545078, "latitude": 2.9255379167197826
+    "longitude": -76.04168074747388, "latitude": 2.807012662748433
 },
 {
     "name": "Parque nacional natural Cordillera de los Picachos",
-    "longitude": -74.80229709642383, "latitude": 3.004499396706624
+    "longitude": -74.9189877337569, "latitude": 2.9878831927551937
 },
 {
     "name": "Parque nacional natural Chingaza",
-    "longitude": -73.75628674255171, "latitude": 4.580638950064213
+    "longitude": -73.75810300268782, "latitude": 4.57983065838507
 },
 {
     "name": "Parque nacional natural Sumapaz",
@@ -70,7 +70,7 @@
 },
 {
     "name": "Parque nacional natural El Cocuy",
-    "longitude": -72.29171067909212, "latitude": 6.457299726219866
+    "longitude": -72.35413733890759, "latitude": 6.41812130447541
 },
 {
     "name": "Parque nacional natural Pisba",
@@ -78,7 +78,7 @@
 },
 {
     "name": "Parque nacional natural Tamá",
-    "longitude": -72.24860695308972, "latitude": 7.299920918985964
+    "longitude": -72.37990004442476, "latitude": 7.161805580161926
 },
 {
     "name": "Santuario de fauna y flora Iguaque",
@@ -90,7 +90,7 @@
 },
 {
     "name": "Santuario de fauna y flora Ciénaga Grande de Santa Marta",
-    "longitude": -74.48599852511498, "latitude": 10.718974783545926
+    "longitude": -74.35448308543924, "latitude": 10.747940599096141
 },
 {
     "name": "Parque nacional natural Sanquianga",
@@ -102,11 +102,11 @@
 },
 {
     "name": "Parque nacional natural Paramillo",
-    "longitude": -76.08629772588952, "latitude": 7.551563055877013
+    "longitude": -75.94527158985792, "latitude": 7.033480038047604
 },
 {
     "name": "Parque nacional natural Munchique",
-    "longitude": -77.00324214440349, "latitude": 2.6886665299557673
+    "longitude": -77.1104250083475, "latitude": 2.6387991003954276
 },
 {
     "name": "Santuario de fauna y flora Los Colorados",
@@ -142,7 +142,7 @@
 },
 {
     "name": "Parque nacional natural Tatamá",
-    "longitude": -76.08925452525354, "latitude": 5.117854040995377
+    "longitude": -76.06749643889293, "latitude": 4.983562175240365
 },
 {
     "name": "Área natural única Los Estoraques",
@@ -162,15 +162,15 @@
 },
 {
     "name": "Parque nacional natural Tinigua",
-    "longitude": -75.29348055485319, "latitude": 2.6842099992216846
+    "longitude": -73.79292030061141, "latitude": 2.2627953315847287
 },
 {
     "name": "Parque nacional natural Catatumbo Barí",
-    "longitude": -73.1639134885836, "latitude": 8.969531898325322
+    "longitude": -73.36587734448698, "latitude": 9.127545305662847
 },
 {
     "name": "Santuario de fauna y flora Guanentá Alto Río Fonce",
-    "longitude": -73.13820040223011, "latitude": 6.047039245389172
+    "longitude": -73.07053704220263, "latitude": 5.948985493588773
 },
 {
     "name": "Parque nacional natural Old Providence McBean Lagoon",
@@ -182,7 +182,7 @@
 },
 {
     "name": "Santuario de fauna y flora Otún Quimbaya",
-    "longitude": -74.4985053254652, "latitude": 4.966848516699416
+    "longitude": -75.62314705699734, "latitude": 4.769599376957445
 },
 {
     "name": "Parque nacional natural Río Puré",
@@ -202,19 +202,19 @@
 },
 {
     "name": "Parque nacional natural Serranía de los Yariguíes",
-    "longitude": -73.45689246345901, "latitude": 6.56266097088725
+    "longitude": -73.36600989452361, "latitude": 6.547620002379034
 },
 {
     "name": "Parque nacional natural Complejo Volcánico Doña Juana-Cascabel",
-    "longitude": -76.76934557703198, "latitude": 1.5542940648095518
+    "longitude": -76.93507365294742, "latitude": 1.5713083712167966
 },
 {
     "name": "Parque nacional natural Serranía de los Churumbelos Auka-Wasi",
-    "longitude": -76.42386140792932, "latitude": 1.2973335561770039
+    "longitude": -76.57525963664393, "latitude": 1.2880843478738198
 },
 {
-    "name": "Santuario de fauna y flora Plantas Medicinales Orito Ingi-Andé",
-    "longitude": -77.0963651192706, "latitude": 0.7623348504288691
+    "name": "Santuario de fauna y flora Plantas Medicinales Orito",
+    "longitude": -76.86043019737807, "latitude": 0.7765826700141338
 },
 {
     "name": "Parque nacional natural Yaigojé Apaporis",
@@ -234,6 +234,6 @@
 },
 {
     "name": "Parque nacional natural Bahía Portete-Kaurrele​",
-    "longitude": -71.88602706996933, "latitude": 12.202417941103047
+    "longitude": -71.95866992649489, "latitude": 12.251488455045758
 }
 ]

@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/icono_app2_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EcoTour">
-        <activity android:name=".sugerenciasBilletera"></activity>
+        <activity android:name=".DestinosCercanosActivity"></activity>
+        <activity android:name=".sugerenciasBilletera" />
         <activity
             android:name=".InfoAdicionalReserva"
             android:exported="true" />

@@ -35,6 +35,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 import org.json.JSONArray;
@@ -57,6 +58,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     double userLongitude = 0.0;
     double lastMarkerLatitude = 0.0;
     double lastMarkerLongitude = 0.0;
+    String distance = "";
+    String duration = "";
+
+    Polyline ruta = null;
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
@@ -87,6 +92,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         mMap.getUiSettings().setZoomControlsEnabled(true);
+
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
 
@@ -134,12 +140,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         enableMyLocation();
 
+
     }
 
     private void enableMyLocation() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             if (mMap != null) {
                 mMap.setMyLocationEnabled(true);
+
+                LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                userLatitude = location.getLatitude();
+                userLongitude = location.getLongitude();
             }
         } else {
             // Permission to access the location is missing. Show rationale and request permission
@@ -197,9 +209,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //String url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + latitudInicial + "," + longitudInicial+ "&destination=" + latitudFinal + "," + longitudFinal;
 
-        String url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + 2.1804071402784384 + "," + -69.17611518858386+ "&destination=" + 8.221045314579474 + "," + -73.23850824811174 + "+&key=AIzaSyBjICZ4KM_pSshwC4KSBeHUA8_STEm22vE";
+        String url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + latitudInicial + "," + longitudInicial + "&destination=" + latitudFinal + "," + longitudFinal + "+&key=AIzaSyDrxuUQyR0gCYzbwZ0he7qD70aPAv5YqIM";
 
-        System.out.println("GONORREA" + url);
+        System.out.println("URL " + url);
 
         request = Volley.newRequestQueue(getApplicationContext());
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -211,8 +223,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 JSONArray jRoutes = null;
                 JSONArray jLegs = null;
                 JSONArray jSteps = null;
+                JSONArray jDistance = null;
+                JSONArray jDuration = null;
 
-                System.out.println("GONORREA" + response);
+                System.out.println("Resultado " + response);
 
                 try {
 
@@ -223,11 +237,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         jLegs = ((JSONObject) jRoutes.get(i)).getJSONArray("legs");
                         List<HashMap<String, String>> path = new ArrayList<HashMap<String, String>>();
 
+                        distance = (String) ((JSONObject) ((JSONObject) jLegs.get(0)).get("distance")).get("text");
+                        duration = (String) ((JSONObject) ((JSONObject) jLegs.get(0)).get("duration")).get("text");
 
 
                         /** Traversing all legs */
                         for (int j = 0; j < jLegs.length(); j++) {
                             jSteps = ((JSONObject) jLegs.get(j)).getJSONArray("steps");
+
 
                             /** Traversing all steps */
                             for (int k = 0; k < jSteps.length(); k++) {
@@ -246,6 +263,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             ReadJson.routes.add(path);
                         }
                     }
+                    System.out.println("Llego aca la primera");
+                    cosasdeeso();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 } catch (Exception e) {
@@ -254,7 +273,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "No se puede conectar " + error.toString(), Toast.LENGTH_LONG).show();
+
                 System.out.println();
                 Log.d("ERROR: ", error.toString());
             }
@@ -263,56 +282,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         request.add(jsonObjectRequest);
+
     }
-
-
-    public List<List<HashMap<String, String>>> parse(JSONObject jObject) {
-        //Este método PARSEA el JSONObject que retorna del API de Rutas de Google devolviendo
-        //una lista del lista de HashMap Strings con el listado de Coordenadas de Lat y Long,
-        //con la cual se podrá dibujar pollinas que describan la ruta entre 2 puntos.
-
-
-        JSONArray jRoutes = null;
-        JSONArray jLegs = null;
-        JSONArray jSteps = null;
-
-        try {
-
-            jRoutes = jObject.getJSONArray("routes");
-
-            /** Traversing all routes */
-            for (int i = 0; i < jRoutes.length(); i++) {
-                jLegs = ((JSONObject) jRoutes.get(i)).getJSONArray("legs");
-                List<HashMap<String, String>> path = new ArrayList<HashMap<String, String>>();
-
-                /** Traversing all legs */
-                for (int j = 0; j < jLegs.length(); j++) {
-                    jSteps = ((JSONObject) jLegs.get(j)).getJSONArray("steps");
-
-                    /** Traversing all steps */
-                    for (int k = 0; k < jSteps.length(); k++) {
-                        String polyline = "";
-                        polyline = (String) ((JSONObject) ((JSONObject) jSteps.get(k)).get("polyline")).get("points");
-                        List<LatLng> list = decodePoly(polyline);
-
-                        /** Traversing all points */
-                        for (int l = 0; l < list.size(); l++) {
-                            HashMap<String, String> hm = new HashMap<String, String>();
-                            hm.put("lat", Double.toString(((LatLng) list.get(l)).latitude));
-                            hm.put("lng", Double.toString(((LatLng) list.get(l)).longitude));
-                            path.add(hm);
-                        }
-                    }
-                    ReadJson.routes.add(path);
-                }
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-        }
-        return ReadJson.routes;
-    }
-
 
     private List<LatLng> decodePoly(String encoded) {
 
@@ -351,8 +322,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void cosasdeeso() {
 
+        System.out.println("Si llego2");
+
         ArrayList<LatLng> points = new ArrayList<LatLng>();;
         PolylineOptions lineOptions = new PolylineOptions();;
+        if(ruta != null){
+            ruta.remove();
+        }
         LatLng center = new LatLng(0, 0);
 
         // setUpMapIfNeeded();
@@ -382,25 +358,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // Agregamos todos los puntos en la ruta al objeto LineOptions
             lineOptions.addAll(points);
             //Definimos el grosor de las Polilíneas
-            lineOptions.width(2);
+            lineOptions.width(10);
             //Definimos el color de la Polilíneas
-            lineOptions.color(Color.BLUE);
+            lineOptions.color(Color.rgb(102, 157, 246));
         }
 
         // Dibujamos las Polilineas en el Google Map para cada ruta
-        mMap.addPolyline(lineOptions);
+        ruta = mMap.addPolyline(lineOptions);
 
-
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(center, 15));
+        if(center.longitude != 0 && center.latitude != 0) {
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(center, 7));
+        }
+        System.out.println(duration);
+        duration = duration.replaceAll("hours", "horas");
+        duration = duration.replaceAll("mins", "minutos");
+        System.out.println(duration);
+        if(distance != "" || duration != "") {
+            Toast.makeText(getApplicationContext(), distance + ". Tu llegada aproximada es en: " + duration + ".", Toast.LENGTH_LONG).show();
+        }
         /////////////
 
     }
 
 
     public void mapsIndicator(View view) {
-        userUbication();
+        //userUbication();
+        System.out.println("SIIIII");
         webServiceObtenerRuta(Double.toString(userLatitude), Double.toString(userLongitude), Double.toString(lastMarkerLatitude), Double.toString(lastMarkerLongitude));
-        cosasdeeso();
+
     }
 
 
@@ -411,7 +396,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //mMap.animateCamera(CameraUpdateFactory.zoomIn());
         //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 10));
 
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 9), 1000, null);
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 8), 1000, null);
         mMap.setInfoWindowAdapter(new CustomWindowInfo(getApplicationContext()));
 
         marker.showInfoWindow();
@@ -423,6 +408,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         lastMarkerLatitude = marker.getPosition().latitude;
         lastMarkerLongitude = marker.getPosition().longitude;
+
+
 
 
 

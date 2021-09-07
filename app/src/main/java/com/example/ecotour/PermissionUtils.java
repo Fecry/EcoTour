@@ -3,10 +3,12 @@ package com.example.ecotour;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.DialogFragment;
 
@@ -26,6 +28,7 @@ public abstract class PermissionUtils {
 
         }
     }
+
 
 
     public static boolean isPermissionGranted(String[] grantPermissions, int[] grantResults,
