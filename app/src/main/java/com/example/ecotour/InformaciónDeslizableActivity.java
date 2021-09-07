@@ -95,14 +95,16 @@ public class InformaciónDeslizableActivity extends AppCompatActivity {
         favoritos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                favoritos.setBackgroundColor(getResources().getColor(R.color.purple_200));
                 String nombre = reserva.getNombre();
                 int numero = ListadoReservasActivity.diccionario.get(nombre);
                 if(numeroReservas.contains(numero)){
                     numeroReservas.remove(new Integer(numero));
+
                     Toast.makeText(getBaseContext(), "Esta reserva se ha eliminado de favoritos.", Toast.LENGTH_LONG).show();
+                    favoritos.setBackgroundColor(getResources().getColor(R.color.white));
                 }
                 else{
+                    favoritos.setBackgroundColor(getResources().getColor(R.color.purple_200));
                     numeroReservas.add(numero);
                     Toast.makeText(getBaseContext(), "Agregada a favoritos.", Toast.LENGTH_LONG).show();
                 }
