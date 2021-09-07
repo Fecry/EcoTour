@@ -208,7 +208,7 @@ public class iniciarSesion extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(iniciarSesion.this, "Ingreso exitoso.", Toast.LENGTH_LONG).show();
 
                 int arroba = email.indexOf("@");
-                intent.putExtra("email", (Serializable) email.substring(0,arroba));
+                intent.putExtra("nombre", (Serializable) email.substring(0,arroba));
                 startActivity(intent);
                 progressBar.setVisibility(View.INVISIBLE);
             }
